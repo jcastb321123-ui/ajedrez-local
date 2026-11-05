@@ -70,3 +70,25 @@ o el historial.
 En una solicitud de cambios, explica qué problema resuelve, qué comportamiento
 cambia y qué pruebas se han ejecutado. Las modalidades remota y contra IA, la
 persistencia y el menú de preferencias siguen pendientes de diseño e integración.
+
+## Publicar una versión
+
+1. Actualiza `project.version` en `pyproject.toml` y revisa los comandos de
+   instalación del README.
+2. Añade `docs/versiones/v<versión>.md` con las novedades, la instalación y las
+   limitaciones de esa entrega.
+3. Integra los cambios en `main` e inicia el flujo **Pruebas y paquete de la
+   versión local** desde Actions, con la opción `publicar` activada. También se
+   puede solicitar la publicación incluyendo `[publicar version]` en el mensaje
+   del último commit enviado a `main`.
+4. Comprueba que ambos trabajos, `comprobar` y `publicar`, terminan correctamente
+   y que la entrega contiene el paquete y `SHA256SUMS.txt`.
+
+El flujo obtiene la versión de `pyproject.toml`. La etiqueta `v<versión>` señala
+el commit comprobado y la entrega incluye el mismo paquete que se instaló y probó.
+La publicación sólo está habilitada desde `main` y no se ejecuta en solicitudes
+de cambios. Sólo el trabajo de publicación recibe permiso de escritura.
+
+No se sustituyen versiones ya publicadas: si una entrega necesita cambios,
+incrementa la versión y prepara unas nuevas notas. Una entrega no implica que
+estén implementadas las funcionalidades que siguen documentadas como pendientes.

@@ -4,6 +4,12 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      publicar:
+        description: Publicar la versión de pyproject.toml después de comprobarla
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -12,17 +18,27 @@ jobs:
   comprobar:
     runs-on: windows-latest
     timeout-minutes: 30
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     defaults:
       run:
         shell: pwsh
     steps:
       - name: Obtener el código
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Preparar Python
         uses: actions/setup-python@v7
         with:
           python-version: '3.13'
+
+      - name: Leer la versión del paquete
+        id: version
+        run: |
+          $version = python -c "import pathlib, tomllib; print(tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8'))['project']['version'])"
+          "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Ejecutar las pruebas del proyecto
         run: python -B -X utf8 -m unittest discover -s pruebas -t . -p "test_*.py"
@@ -40,3 +56,60 @@ jobs:
 
       - name: Comprobar la aplicación instalada
         run: .\.venv-comprobacion\Scripts\python.exe -I -B -X utf8 .\herramientas\comprobar_instalacion.py
+
+      - name: Conservar el paquete comprobado para la entrega
+        if: >-
+          github.ref == 'refs/heads/main' &&
+          ((github.event_name == 'workflow_dispatch' && inputs.publicar) ||
+          (github.event_name == 'push' && contains(github.event.head_commit.message, '[publicar version]')))
+        uses: actions/upload-artifact@v7
+        with:
+          name: paquete-comprobado
+          path: dist/ajedrez_local-*.whl
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  publicar:
+    needs: comprobar
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'workflow_dispatch' && inputs.publicar) ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[publicar version]')))
+    runs-on: windows-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: publicar-version
+      cancel-in-progress: false
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Obtener las notas del mismo commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Recuperar el paquete comprobado
+        uses: actions/download-artifact@v8
+        with:
+          name: paquete-comprobado
+          path: dist
+
+      - name: Crear la entrega con el paquete y su suma de comprobación
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          VERSION_PAQUETE: ${{ needs.comprobar.outputs.version }}
+        run: |
+          $etiqueta = "v$env:VERSION_PAQUETE"
+          $notas = "docs/versiones/$etiqueta.md"
+          if (-not (Test-Path -LiteralPath $notas -PathType Leaf)) {
+            throw "Faltan las notas de la versión: $notas"
+          }
+          $paquete = Get-Item -LiteralPath "dist/ajedrez_local-$env:VERSION_PAQUETE-py3-none-any.whl"
+          $suma = (Get-FileHash -LiteralPath $paquete.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$suma  $($paquete.Name)" | Set-Content -LiteralPath dist/SHA256SUMS.txt -Encoding utf8NoBOM
+          gh release create $etiqueta $paquete.FullName dist/SHA256SUMS.txt --target $env:GITHUB_SHA --title "Ajedrez local $etiqueta" --notes-file $notas

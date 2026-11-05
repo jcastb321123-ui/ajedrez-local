@@ -8,6 +8,14 @@ partida original.
 versión local comprobable y documentada. El juego contra IA, las partidas remotas
 y la persistencia de datos todavía no están disponibles.
 
+[Descargar v0.1.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.1.0)
+· [Pruebas automáticas](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
+
+![Partida local con navegación, selección de piezas y anotaciones estratégicas](docs/imagenes/partida-local.png)
+
+Captura de la aplicación: partida local con una flecha de análisis y una pieza
+seleccionada. Las anotaciones no modifican la posición del modelo.
+
 ## Para conocer el proyecto
 
 - [Instalación y ejecución](#instalación): prepara una partida local.
@@ -57,6 +65,26 @@ Los siguientes comandos utilizan PowerShell y no requieren permisos de
 administrador. El funcionamiento en otros sistemas aún no se ha verificado.
 
 ## Instalación
+
+### Desde la entrega publicada
+
+Descarga `ajedrez_local-0.1.0-py3-none-any.whl` desde
+[la entrega v0.1.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.1.0).
+Abre PowerShell en la carpeta donde lo has guardado y ejecuta:
+
+```powershell
+python --version
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.1.0-py3-none-any.whl
+.\.venv\Scripts\ajedrez.exe
+```
+
+Necesitas Python 3.13 o posterior con Tkinter. El archivo `.whl` incluye el código
+y los recursos gráficos; no es un ejecutable autónomo. Esta instalación no descarga
+dependencias. La entrega incluye `SHA256SUMS.txt` para comprobar la descarga con
+`Get-FileHash -Algorithm SHA256`.
+
+### Desde el código fuente
 
 Abre una terminal **en la carpeta exterior del proyecto**, donde están
 `pyproject.toml`, `ajedrez` y `pruebas`. No ejecutes los comandos desde la carpeta
@@ -212,7 +240,7 @@ ajedrez/
     gráficos/             Tablero visual, interacción, temas y panel de análisis.
     recursos/             Catálogos e imágenes incluidos en la instalación.
 pruebas/                  Pruebas automáticas y demostraciones actuales.
-docs/                     Explicación de la arquitectura.
+docs/                     Arquitectura, capturas y notas de versión.
 CONTRIBUTING.md           Guía para desarrollar y proponer cambios.
 herramientas/             Comprobación de la instalación distribuible.
 .github/workflows/        Verificación automática en GitHub.
@@ -278,11 +306,15 @@ su lanzador; crea una ventana oculta con las imágenes reales y reproduce
 `e2–e4` y `e7–e5`, comprobando el modelo y el tablero gráfico. Termina con error
 si falta Tkinter, no hay entorno gráfico o falla alguna comprobación.
 
-El flujo `.github/workflows/pruebas.yml` está preparado para ejecutar la batería
-de pruebas, construir el paquete e instalarlo en un entorno nuevo en Windows
-con Python 3.13. Se ejecutará al subir cambios a GitHub o abrir una solicitud de
-cambios, y también podrá iniciarse manualmente desde Actions. No publica el
-paquete. Su configuración no implica que ya se haya ejecutado en GitHub.
+El flujo [Pruebas y paquete de la versión local](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
+ejecuta la batería de pruebas, construye el paquete y comprueba su instalación
+en un entorno nuevo en Windows con Python 3.13. Se ejecuta al subir cambios,
+abrir una solicitud de cambios o iniciarlo manualmente desde Actions.
+
+La publicación es una opción explícita del mismo flujo: sólo después de superar
+las pruebas y la instalación crea la etiqueta y la entrega en GitHub. Adjunta
+el mismo paquete comprobado y su suma SHA-256. El procedimiento está explicado
+en [CONTRIBUTING.md](CONTRIBUTING.md#publicar-una-versión).
 
 ## Limitaciones y próximos pasos
 
