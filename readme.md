@@ -312,3 +312,9 @@ de incorporar nuevas modalidades.
 ## Autor
 
 José Castaño Blanco.
+
+## Licencia
+
+Este proyecto se distribuye bajo la [licencia MIT](LICENSE).
+
+Copyright (c) 2026 José Castaño Blanco.
