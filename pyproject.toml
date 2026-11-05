@@ -1,0 +1,37 @@
+[build-system]
+
+requires = ["setuptools>=77.0.3"]
+
+build-backend = "setuptools.build_meta"
+
+[project]
+
+name = "ajedrez-local"
+
+version = "0.1.0"
+
+authors = [{name = "José Castaño Blanco"}]
+
+description = "Aplicación de ajedrez con interfaz gráfica, partidas locales y herramientas de análisis de posiciones y variantes."
+
+readme = "readme.md"
+
+requires-python = ">=3.13"
+
+dependencies = []
+
+[project.gui-scripts]
+
+ajedrez = "ajedrez.aplicacion:main"
+
+[tool.setuptools.packages.find]
+
+where = ["."]
+
+include = ["ajedrez", "ajedrez.*"]
+
+namespaces = false
+
+[tool.setuptools.package-data]
+
+ajedrez = ["recursos/**/*"]

@@ -1,0 +1,19 @@
+# Entornos, cachés y paquetes generados
+.venv/
+.venv-comprobacion/
+__pycache__/
+*.pyc
+/build/
+/dist/
+*.egg-info/
+node_modules/
+
+# Copias locales ajenas a la versión publicable
+/recursos/
+*-LAPTOP-*.py
+
+# Ejercicios antiguos conservados en el equipo
+/pruebas/main_prueba
+/pruebas/main_prueba1.py
+/pruebas/gui_prueba[123].py
+/pruebas/fechas_prueba1.py

@@ -1,0 +1,6671 @@
+{
+  "version": "1.0.0",
+  "fecha": "2026-09-28",
+  "estado": "recursos_preparados_sin_integracion_GUI",
+  "idioma": "es",
+  "tamanos_casilla_px": [
+    60,
+    120,
+    240
+  ],
+  "coordenadas_svg": "viewBox: 0 0 100 100 equivale a una casilla",
+  "colores": {
+    "marfil": "#FAF7EE",
+    "grafito": "#252A30",
+    "rojo": "#B8323C",
+    "azul": "#2563A6",
+    "verde": "#28784A",
+    "ambar": "#D49A28",
+    "secundario": "#58616A"
+  },
+  "paletas": {
+    "club": {
+      "clara": "#E8E6D5",
+      "oscura": "#789078",
+      "fondo": "#F3F1E8"
+    },
+    "taller": {
+      "clara": "#E4CEAA",
+      "oscura": "#986F4F",
+      "fondo": "#F1E9DB"
+    },
+    "pizarra": {
+      "clara": "#D6DFE3",
+      "oscura": "#708895",
+      "fondo": "#E9EEF0"
+    }
+  },
+  "acabados": [
+    "liso_mate",
+    "microfibra",
+    "veta_fina",
+    "mineral_suave"
+  ],
+  "temas": {
+    "club.liso_mate": {
+      "paleta": "club",
+      "acabado": "liso_mate",
+      "casilla_clara": "casilla.club.liso_mate.clara",
+      "casilla_oscura": "casilla.club.liso_mate.oscura",
+      "familia_piezas": "pieza.liso_mate",
+      "proyecciones": "proyeccion.liso_mate",
+      "fondo": "fondo.club",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "club.microfibra": {
+      "paleta": "club",
+      "acabado": "microfibra",
+      "casilla_clara": "casilla.club.microfibra.clara",
+      "casilla_oscura": "casilla.club.microfibra.oscura",
+      "familia_piezas": "pieza.microfibra",
+      "proyecciones": "proyeccion.microfibra",
+      "fondo": "fondo.club",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "club.veta_fina": {
+      "paleta": "club",
+      "acabado": "veta_fina",
+      "casilla_clara": "casilla.club.veta_fina.clara",
+      "casilla_oscura": "casilla.club.veta_fina.oscura",
+      "familia_piezas": "pieza.veta_fina",
+      "proyecciones": "proyeccion.veta_fina",
+      "fondo": "fondo.club",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "club.mineral_suave": {
+      "paleta": "club",
+      "acabado": "mineral_suave",
+      "casilla_clara": "casilla.club.mineral_suave.clara",
+      "casilla_oscura": "casilla.club.mineral_suave.oscura",
+      "familia_piezas": "pieza.mineral_suave",
+      "proyecciones": "proyeccion.mineral_suave",
+      "fondo": "fondo.club",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "taller.liso_mate": {
+      "paleta": "taller",
+      "acabado": "liso_mate",
+      "casilla_clara": "casilla.taller.liso_mate.clara",
+      "casilla_oscura": "casilla.taller.liso_mate.oscura",
+      "familia_piezas": "pieza.liso_mate",
+      "proyecciones": "proyeccion.liso_mate",
+      "fondo": "fondo.taller",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "taller.microfibra": {
+      "paleta": "taller",
+      "acabado": "microfibra",
+      "casilla_clara": "casilla.taller.microfibra.clara",
+      "casilla_oscura": "casilla.taller.microfibra.oscura",
+      "familia_piezas": "pieza.microfibra",
+      "proyecciones": "proyeccion.microfibra",
+      "fondo": "fondo.taller",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "taller.veta_fina": {
+      "paleta": "taller",
+      "acabado": "veta_fina",
+      "casilla_clara": "casilla.taller.veta_fina.clara",
+      "casilla_oscura": "casilla.taller.veta_fina.oscura",
+      "familia_piezas": "pieza.veta_fina",
+      "proyecciones": "proyeccion.veta_fina",
+      "fondo": "fondo.taller",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "taller.mineral_suave": {
+      "paleta": "taller",
+      "acabado": "mineral_suave",
+      "casilla_clara": "casilla.taller.mineral_suave.clara",
+      "casilla_oscura": "casilla.taller.mineral_suave.oscura",
+      "familia_piezas": "pieza.mineral_suave",
+      "proyecciones": "proyeccion.mineral_suave",
+      "fondo": "fondo.taller",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "pizarra.liso_mate": {
+      "paleta": "pizarra",
+      "acabado": "liso_mate",
+      "casilla_clara": "casilla.pizarra.liso_mate.clara",
+      "casilla_oscura": "casilla.pizarra.liso_mate.oscura",
+      "familia_piezas": "pieza.liso_mate",
+      "proyecciones": "proyeccion.liso_mate",
+      "fondo": "fondo.pizarra",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "pizarra.microfibra": {
+      "paleta": "pizarra",
+      "acabado": "microfibra",
+      "casilla_clara": "casilla.pizarra.microfibra.clara",
+      "casilla_oscura": "casilla.pizarra.microfibra.oscura",
+      "familia_piezas": "pieza.microfibra",
+      "proyecciones": "proyeccion.microfibra",
+      "fondo": "fondo.pizarra",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "pizarra.veta_fina": {
+      "paleta": "pizarra",
+      "acabado": "veta_fina",
+      "casilla_clara": "casilla.pizarra.veta_fina.clara",
+      "casilla_oscura": "casilla.pizarra.veta_fina.oscura",
+      "familia_piezas": "pieza.veta_fina",
+      "proyecciones": "proyeccion.veta_fina",
+      "fondo": "fondo.pizarra",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    },
+    "pizarra.mineral_suave": {
+      "paleta": "pizarra",
+      "acabado": "mineral_suave",
+      "casilla_clara": "casilla.pizarra.mineral_suave.clara",
+      "casilla_oscura": "casilla.pizarra.mineral_suave.oscura",
+      "familia_piezas": "pieza.mineral_suave",
+      "proyecciones": "proyeccion.mineral_suave",
+      "fondo": "fondo.pizarra",
+      "tipografia": "compartida",
+      "ayudas": "compartidas"
+    }
+  },
+  "tipografia": {
+    "interfaz": {
+      "familia": "Segoe UI",
+      "alternativas": [
+        "Arial",
+        "TkDefaultFont"
+      ],
+      "tamano_px": 16,
+      "peso": "normal",
+      "color": "#252A30"
+    },
+    "titulo": {
+      "familia": "Georgia",
+      "alternativas": [
+        "Times New Roman",
+        "TkDefaultFont"
+      ],
+      "tamano_px": 28,
+      "peso": "normal",
+      "color": "#252A30"
+    },
+    "subtitulo": {
+      "familia": "Segoe UI",
+      "alternativas": [
+        "Arial",
+        "TkDefaultFont"
+      ],
+      "tamano_px": 16,
+      "peso": "normal",
+      "color": "#58616A"
+    },
+    "coordenada": {
+      "familia": "Segoe UI",
+      "alternativas": [
+        "Arial",
+        "TkDefaultFont"
+      ],
+      "tamano_relativo_casilla": 0.22,
+      "peso": "normal",
+      "color": "#252A30",
+      "ubicacion": "banda_exterior"
+    },
+    "secuencia": {
+      "familia": "Segoe UI",
+      "alternativas": [
+        "Arial",
+        "TkDefaultFont"
+      ],
+      "tamano_relativo_casilla": 0.2,
+      "peso": "bold",
+      "color": "#252A30",
+      "fondo": "#FAF7EE"
+    },
+    "nota": "Perfiles de fuente, no ficheros TTF redistribuidos. Los PNG de glifos son auxiliares; para texto dinámico usar la fuente."
+  },
+  "textos": {
+    "anotar": "Anotar",
+    "ocultar_marcas": "Ocultar marcas",
+    "limpiar": "Limpiar",
+    "hipotesis": "Hipótesis",
+    "idea": "Idea",
+    "respuesta": "Respuesta",
+    "atencion": "Atención",
+    "apoyo": "Apoyo",
+    "jaque": "Jaque",
+    "promocion": "Elige la pieza de promoción",
+    "turno_blancas": "Juegan blancas",
+    "turno_negras": "Juegan negras"
+  },
+  "geometria": {
+    "flecha": {
+      "ancho_trazo_s": 0.07,
+      "ancho_halo_s": 0.12,
+      "cabeza_largo_s": 0.24,
+      "cabeza_ancho_s": 0.24,
+      "patron_discontinuo_s": [
+        0.12,
+        0.08
+      ],
+      "extremos": "centros_de_casillas",
+      "nota": "PNG horizontal es muestra utilizable a su tamaño nativo; no estirarlo para otros recorridos. Dibujar la geometría entre origen y destino."
+    },
+    "caballo": {
+      "trayecto": "dos_casillas_y_una_perpendicular",
+      "nota": "Convención de desplazamiento, no regla de colisiones."
+    },
+    "anillo": {
+      "radio_s": 0.4,
+      "ancho_s": 0.05
+    },
+    "seleccion": {
+      "margen_s": 0.045,
+      "ancho_exterior_s": 0.065,
+      "ancho_interior_s": 0.025
+    },
+    "punto_legal": {
+      "radio_s": 0.09
+    },
+    "distintivo": {
+      "ancla": "esquina_superior_derecha",
+      "diametro_s": 0.24
+    }
+  },
+  "capas": [
+    "casillas",
+    "tintes",
+    "flechas",
+    "piezas",
+    "contornos_y_distintivos",
+    "texto_y_foco"
+  ],
+  "contratos": {
+    "manual": "Las anotaciones no implican legalidad, amenaza calculada ni jaque.",
+    "hipotesis": "Las proyecciones no cambian tablero aceptado, turno, historial ni promoción pendiente.",
+    "promocion": "Usar las mismas imágenes de dama/torre/alfil/caballo. El menú es una composición, no otra pieza.",
+    "propiedad_imagen": "Conservar una referencia al objeto de imagen mientras la GUI lo muestre.",
+    "flechas": "Para recorridos arbitrarios usar geometria y estilos; los recursos PNG incluidos tienen longitud y orientación documentadas."
+  },
+  "recursos": {
+    "textura.club.clara": {
+      "id": "textura.club.clara",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/club_clara.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "textura.club.oscura": {
+      "id": "textura.club.oscura",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/club_oscura.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "textura.taller.clara": {
+      "id": "textura.taller.clara",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/taller_clara.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "textura.taller.oscura": {
+      "id": "textura.taller.oscura",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/taller_oscura.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "textura.pizarra.clara": {
+      "id": "textura.pizarra.clara",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/pizarra_clara.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "textura.pizarra.oscura": {
+      "id": "textura.pizarra.oscura",
+      "tipo": "textura_original",
+      "archivo": "originales/texturas/pizarra_oscura.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "transparente": false,
+      "nota": "Original ImageGen. Usar material compuesto del catálogo para contraste moderado; no se garantiza periodicidad matemática."
+    },
+    "fondo.club": {
+      "id": "fondo.club",
+      "tipo": "fondo",
+      "descripcion": "",
+      "svg": "svg/fondo/club.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/fondo/club.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/fondo/club.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/fondo/club.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color": "#F3F1E8",
+      "repetible": true
+    },
+    "casilla.club.liso_mate.clara": {
+      "id": "casilla.club.liso_mate.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/liso_mate/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/liso_mate/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/liso_mate/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/liso_mate/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E8E6D5",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.club.liso_mate.oscura": {
+      "id": "casilla.club.liso_mate.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/liso_mate/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/liso_mate/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/liso_mate/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/liso_mate/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#789078",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.club.microfibra.clara": {
+      "id": "casilla.club.microfibra.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/microfibra/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/microfibra/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/microfibra/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/microfibra/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E8E6D5",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.12
+    },
+    "casilla.club.microfibra.oscura": {
+      "id": "casilla.club.microfibra.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/microfibra/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/microfibra/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/microfibra/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/microfibra/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#789078",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.22
+    },
+    "casilla.club.veta_fina.clara": {
+      "id": "casilla.club.veta_fina.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/veta_fina/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/veta_fina/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/veta_fina/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/veta_fina/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E8E6D5",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.02
+    },
+    "casilla.club.veta_fina.oscura": {
+      "id": "casilla.club.veta_fina.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/veta_fina/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/veta_fina/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/veta_fina/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/veta_fina/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#789078",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.1
+    },
+    "casilla.club.mineral_suave.clara": {
+      "id": "casilla.club.mineral_suave.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/mineral_suave/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/mineral_suave/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/mineral_suave/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/mineral_suave/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E8E6D5",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.06
+    },
+    "casilla.club.mineral_suave.oscura": {
+      "id": "casilla.club.mineral_suave.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/club/mineral_suave/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/club/mineral_suave/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/club/mineral_suave/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/club/mineral_suave/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#789078",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.12
+    },
+    "fondo.taller": {
+      "id": "fondo.taller",
+      "tipo": "fondo",
+      "descripcion": "",
+      "svg": "svg/fondo/taller.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/fondo/taller.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/fondo/taller.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/fondo/taller.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color": "#F1E9DB",
+      "repetible": true
+    },
+    "casilla.taller.liso_mate.clara": {
+      "id": "casilla.taller.liso_mate.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/liso_mate/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/liso_mate/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/liso_mate/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/liso_mate/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E4CEAA",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.taller.liso_mate.oscura": {
+      "id": "casilla.taller.liso_mate.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/liso_mate/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/liso_mate/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/liso_mate/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/liso_mate/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#986F4F",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.taller.microfibra.clara": {
+      "id": "casilla.taller.microfibra.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/microfibra/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/microfibra/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/microfibra/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/microfibra/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E4CEAA",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.06
+    },
+    "casilla.taller.microfibra.oscura": {
+      "id": "casilla.taller.microfibra.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/microfibra/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/microfibra/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/microfibra/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/microfibra/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#986F4F",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.16
+    },
+    "casilla.taller.veta_fina.clara": {
+      "id": "casilla.taller.veta_fina.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/veta_fina/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/veta_fina/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/veta_fina/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/veta_fina/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E4CEAA",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.1
+    },
+    "casilla.taller.veta_fina.oscura": {
+      "id": "casilla.taller.veta_fina.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/veta_fina/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/veta_fina/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/veta_fina/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/veta_fina/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#986F4F",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.3
+    },
+    "casilla.taller.mineral_suave.clara": {
+      "id": "casilla.taller.mineral_suave.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/mineral_suave/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/mineral_suave/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/mineral_suave/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/mineral_suave/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#E4CEAA",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.1
+    },
+    "casilla.taller.mineral_suave.oscura": {
+      "id": "casilla.taller.mineral_suave.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/taller/mineral_suave/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/taller/mineral_suave/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/taller/mineral_suave/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/taller/mineral_suave/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#986F4F",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.16
+    },
+    "fondo.pizarra": {
+      "id": "fondo.pizarra",
+      "tipo": "fondo",
+      "descripcion": "",
+      "svg": "svg/fondo/pizarra.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/fondo/pizarra.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/fondo/pizarra.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/fondo/pizarra.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color": "#E9EEF0",
+      "repetible": true
+    },
+    "casilla.pizarra.liso_mate.clara": {
+      "id": "casilla.pizarra.liso_mate.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/liso_mate/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/liso_mate/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/liso_mate/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/liso_mate/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#D6DFE3",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.pizarra.liso_mate.oscura": {
+      "id": "casilla.pizarra.liso_mate.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/liso_mate/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/liso_mate/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/liso_mate/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/liso_mate/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#708895",
+      "acabado": "liso_mate",
+      "opacidad_textura": 0
+    },
+    "casilla.pizarra.microfibra.clara": {
+      "id": "casilla.pizarra.microfibra.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/microfibra/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/microfibra/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/microfibra/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/microfibra/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#D6DFE3",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.16
+    },
+    "casilla.pizarra.microfibra.oscura": {
+      "id": "casilla.pizarra.microfibra.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/microfibra/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/microfibra/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/microfibra/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/microfibra/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#708895",
+      "acabado": "microfibra",
+      "opacidad_textura": 0.22
+    },
+    "casilla.pizarra.veta_fina.clara": {
+      "id": "casilla.pizarra.veta_fina.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/veta_fina/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/veta_fina/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/veta_fina/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/veta_fina/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#D6DFE3",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.04
+    },
+    "casilla.pizarra.veta_fina.oscura": {
+      "id": "casilla.pizarra.veta_fina.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/veta_fina/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/veta_fina/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/veta_fina/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/veta_fina/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#708895",
+      "acabado": "veta_fina",
+      "opacidad_textura": 0.12
+    },
+    "casilla.pizarra.mineral_suave.clara": {
+      "id": "casilla.pizarra.mineral_suave.clara",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/mineral_suave/clara.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/mineral_suave/clara.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/mineral_suave/clara.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/mineral_suave/clara.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#D6DFE3",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.1
+    },
+    "casilla.pizarra.mineral_suave.oscura": {
+      "id": "casilla.pizarra.mineral_suave.oscura",
+      "tipo": "casilla",
+      "descripcion": "",
+      "svg": "svg/casilla/pizarra/mineral_suave/oscura.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/casilla/pizarra/mineral_suave/oscura.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/casilla/pizarra/mineral_suave/oscura.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/casilla/pizarra/mineral_suave/oscura.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": false,
+      "ancla": "centro",
+      "color_base": "#708895",
+      "acabado": "mineral_suave",
+      "opacidad_textura": 0.18
+    },
+    "pieza.liso_mate.blanca.rey": {
+      "id": "pieza.liso_mate.blanca.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.rey": {
+      "id": "proyeccion.liso_mate.blanca.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.blanca.dama": {
+      "id": "pieza.liso_mate.blanca.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.dama": {
+      "id": "proyeccion.liso_mate.blanca.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.blanca.alfil": {
+      "id": "pieza.liso_mate.blanca.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.alfil": {
+      "id": "proyeccion.liso_mate.blanca.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.blanca.caballo": {
+      "id": "pieza.liso_mate.blanca.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.caballo": {
+      "id": "proyeccion.liso_mate.blanca.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.blanca.torre": {
+      "id": "pieza.liso_mate.blanca.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.torre": {
+      "id": "proyeccion.liso_mate.blanca.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.blanca.peon": {
+      "id": "pieza.liso_mate.blanca.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.blanca.peon": {
+      "id": "proyeccion.liso_mate.blanca.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.rey": {
+      "id": "pieza.liso_mate.negra.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.rey": {
+      "id": "proyeccion.liso_mate.negra.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.dama": {
+      "id": "pieza.liso_mate.negra.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.dama": {
+      "id": "proyeccion.liso_mate.negra.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.alfil": {
+      "id": "pieza.liso_mate.negra.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.alfil": {
+      "id": "proyeccion.liso_mate.negra.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.caballo": {
+      "id": "pieza.liso_mate.negra.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.caballo": {
+      "id": "proyeccion.liso_mate.negra.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.torre": {
+      "id": "pieza.liso_mate.negra.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.torre": {
+      "id": "proyeccion.liso_mate.negra.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.liso_mate.negra.peon": {
+      "id": "pieza.liso_mate.negra.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/liso_mate/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/liso_mate/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/liso_mate/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/liso_mate/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "liso_mate",
+      "requiere_rotulo": null
+    },
+    "proyeccion.liso_mate.negra.peon": {
+      "id": "proyeccion.liso_mate.negra.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/liso_mate/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/liso_mate/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/liso_mate/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/liso_mate/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "liso_mate",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.rey": {
+      "id": "pieza.microfibra.blanca.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.rey": {
+      "id": "proyeccion.microfibra.blanca.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.dama": {
+      "id": "pieza.microfibra.blanca.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.dama": {
+      "id": "proyeccion.microfibra.blanca.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.alfil": {
+      "id": "pieza.microfibra.blanca.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.alfil": {
+      "id": "proyeccion.microfibra.blanca.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.caballo": {
+      "id": "pieza.microfibra.blanca.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.caballo": {
+      "id": "proyeccion.microfibra.blanca.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.torre": {
+      "id": "pieza.microfibra.blanca.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.torre": {
+      "id": "proyeccion.microfibra.blanca.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.blanca.peon": {
+      "id": "pieza.microfibra.blanca.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.blanca.peon": {
+      "id": "proyeccion.microfibra.blanca.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.rey": {
+      "id": "pieza.microfibra.negra.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.rey": {
+      "id": "proyeccion.microfibra.negra.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.dama": {
+      "id": "pieza.microfibra.negra.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.dama": {
+      "id": "proyeccion.microfibra.negra.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.alfil": {
+      "id": "pieza.microfibra.negra.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.alfil": {
+      "id": "proyeccion.microfibra.negra.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.caballo": {
+      "id": "pieza.microfibra.negra.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.caballo": {
+      "id": "proyeccion.microfibra.negra.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.torre": {
+      "id": "pieza.microfibra.negra.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.torre": {
+      "id": "proyeccion.microfibra.negra.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.microfibra.negra.peon": {
+      "id": "pieza.microfibra.negra.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/microfibra/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/microfibra/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/microfibra/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/microfibra/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "microfibra",
+      "requiere_rotulo": null
+    },
+    "proyeccion.microfibra.negra.peon": {
+      "id": "proyeccion.microfibra.negra.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/microfibra/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/microfibra/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/microfibra/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/microfibra/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "microfibra",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.rey": {
+      "id": "pieza.veta_fina.blanca.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.rey": {
+      "id": "proyeccion.veta_fina.blanca.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.dama": {
+      "id": "pieza.veta_fina.blanca.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.dama": {
+      "id": "proyeccion.veta_fina.blanca.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.alfil": {
+      "id": "pieza.veta_fina.blanca.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.alfil": {
+      "id": "proyeccion.veta_fina.blanca.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.caballo": {
+      "id": "pieza.veta_fina.blanca.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.caballo": {
+      "id": "proyeccion.veta_fina.blanca.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.torre": {
+      "id": "pieza.veta_fina.blanca.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.torre": {
+      "id": "proyeccion.veta_fina.blanca.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.blanca.peon": {
+      "id": "pieza.veta_fina.blanca.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.blanca.peon": {
+      "id": "proyeccion.veta_fina.blanca.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.rey": {
+      "id": "pieza.veta_fina.negra.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.rey": {
+      "id": "proyeccion.veta_fina.negra.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.dama": {
+      "id": "pieza.veta_fina.negra.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.dama": {
+      "id": "proyeccion.veta_fina.negra.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.alfil": {
+      "id": "pieza.veta_fina.negra.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.alfil": {
+      "id": "proyeccion.veta_fina.negra.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.caballo": {
+      "id": "pieza.veta_fina.negra.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.caballo": {
+      "id": "proyeccion.veta_fina.negra.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.torre": {
+      "id": "pieza.veta_fina.negra.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.torre": {
+      "id": "proyeccion.veta_fina.negra.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.veta_fina.negra.peon": {
+      "id": "pieza.veta_fina.negra.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/veta_fina/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/veta_fina/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/veta_fina/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/veta_fina/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "veta_fina",
+      "requiere_rotulo": null
+    },
+    "proyeccion.veta_fina.negra.peon": {
+      "id": "proyeccion.veta_fina.negra.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/veta_fina/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/veta_fina/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/veta_fina/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/veta_fina/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "veta_fina",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.rey": {
+      "id": "pieza.mineral_suave.blanca.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.rey": {
+      "id": "proyeccion.mineral_suave.blanca.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.dama": {
+      "id": "pieza.mineral_suave.blanca.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.dama": {
+      "id": "proyeccion.mineral_suave.blanca.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.alfil": {
+      "id": "pieza.mineral_suave.blanca.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.alfil": {
+      "id": "proyeccion.mineral_suave.blanca.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.caballo": {
+      "id": "pieza.mineral_suave.blanca.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.caballo": {
+      "id": "proyeccion.mineral_suave.blanca.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.torre": {
+      "id": "pieza.mineral_suave.blanca.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.torre": {
+      "id": "proyeccion.mineral_suave.blanca.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.blanca.peon": {
+      "id": "pieza.mineral_suave.blanca.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.blanca.peon": {
+      "id": "proyeccion.mineral_suave.blanca.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.rey": {
+      "id": "pieza.mineral_suave.negra.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.rey": {
+      "id": "proyeccion.mineral_suave.negra.rey",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.dama": {
+      "id": "pieza.mineral_suave.negra.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.dama": {
+      "id": "proyeccion.mineral_suave.negra.dama",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.alfil": {
+      "id": "pieza.mineral_suave.negra.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.alfil": {
+      "id": "proyeccion.mineral_suave.negra.alfil",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.caballo": {
+      "id": "pieza.mineral_suave.negra.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.caballo": {
+      "id": "proyeccion.mineral_suave.negra.caballo",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.torre": {
+      "id": "pieza.mineral_suave.negra.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.torre": {
+      "id": "proyeccion.mineral_suave.negra.torre",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.mineral_suave.negra.peon": {
+      "id": "pieza.mineral_suave.negra.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/mineral_suave/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/mineral_suave/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/mineral_suave/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/mineral_suave/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": null
+    },
+    "proyeccion.mineral_suave.negra.peon": {
+      "id": "proyeccion.mineral_suave.negra.peon",
+      "tipo": "proyeccion",
+      "descripcion": "",
+      "svg": "svg/proyeccion/mineral_suave/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/proyeccion/mineral_suave/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/proyeccion/mineral_suave/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/proyeccion/mineral_suave/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "mineral_suave",
+      "requiere_rotulo": "Hipótesis"
+    },
+    "pieza.reforzada.blanca.rey": {
+      "id": "pieza.reforzada.blanca.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "rey",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.blanca.dama": {
+      "id": "pieza.reforzada.blanca.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "dama",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.blanca.alfil": {
+      "id": "pieza.reforzada.blanca.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "alfil",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.blanca.caballo": {
+      "id": "pieza.reforzada.blanca.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "caballo",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.blanca.torre": {
+      "id": "pieza.reforzada.blanca.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "torre",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.blanca.peon": {
+      "id": "pieza.reforzada.blanca.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/blanca/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/blanca/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/blanca/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/blanca/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "blanca",
+      "rol": "peon",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.rey": {
+      "id": "pieza.reforzada.negra.rey",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/rey.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/rey.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/rey.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/rey.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "rey",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.dama": {
+      "id": "pieza.reforzada.negra.dama",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/dama.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/dama.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/dama.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/dama.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "dama",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.alfil": {
+      "id": "pieza.reforzada.negra.alfil",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/alfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/alfil.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/alfil.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/alfil.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "alfil",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.caballo": {
+      "id": "pieza.reforzada.negra.caballo",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/caballo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/caballo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/caballo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "caballo",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.torre": {
+      "id": "pieza.reforzada.negra.torre",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/torre.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/torre.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/torre.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/torre.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "torre",
+      "acabado": "liso_reforzado"
+    },
+    "pieza.reforzada.negra.peon": {
+      "id": "pieza.reforzada.negra.peon",
+      "tipo": "pieza",
+      "descripcion": "",
+      "svg": "svg/pieza/reforzada/negra/peon.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/pieza/reforzada/negra/peon.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/pieza/reforzada/negra/peon.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/pieza/reforzada/negra/peon.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "bando": "negra",
+      "rol": "peon",
+      "acabado": "liso_reforzado"
+    },
+    "marca.seleccion": {
+      "id": "marca.seleccion",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/seleccion.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/seleccion.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/seleccion.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/seleccion.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.foco": {
+      "id": "marca.foco",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/foco.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/foco.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/foco.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/foco.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.destino_legal": {
+      "id": "marca.destino_legal",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/destino_legal.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/destino_legal.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/destino_legal.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/destino_legal.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.captura_legal": {
+      "id": "marca.captura_legal",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/captura_legal.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/captura_legal.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/captura_legal.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/captura_legal.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.atencion": {
+      "id": "marca.atencion",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/atencion.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/atencion.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/atencion.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/atencion.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.jaque": {
+      "id": "marca.jaque",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/jaque.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/jaque.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/jaque.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/jaque.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.promocion_pendiente": {
+      "id": "marca.promocion_pendiente",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/promocion_pendiente.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/promocion_pendiente.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/promocion_pendiente.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/promocion_pendiente.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.ultima_jugada_origen": {
+      "id": "marca.ultima_jugada_origen",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/ultima_jugada_origen.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/ultima_jugada_origen.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/ultima_jugada_origen.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/ultima_jugada_origen.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.ultima_jugada_destino": {
+      "id": "marca.ultima_jugada_destino",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/ultima_jugada_destino.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/ultima_jugada_destino.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/ultima_jugada_destino.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/ultima_jugada_destino.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.circulo_rojo": {
+      "id": "marca.circulo_rojo",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/circulo_rojo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/circulo_rojo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/circulo_rojo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/circulo_rojo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.fondo_rojo": {
+      "id": "marca.fondo_rojo",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/fondo_rojo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/fondo_rojo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/fondo_rojo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/fondo_rojo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "es_relleno_auxiliar": true,
+      "no_usar_como_unica_senal": true
+    },
+    "flecha.rojo.continua": {
+      "id": "flecha.rojo.continua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/rojo/continua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/rojo/continua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/rojo/continua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/rojo/continua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#B8323C",
+      "forma": "continua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.rojo.discontinua": {
+      "id": "flecha.rojo.discontinua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/rojo/discontinua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/rojo/discontinua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/rojo/discontinua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/rojo/discontinua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#B8323C",
+      "forma": "discontinua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.rojo.caballo": {
+      "id": "flecha.rojo.caballo",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/rojo/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/rojo/caballo.png",
+          "ancho": 120,
+          "alto": 180
+        },
+        "120": {
+          "archivo": "png/120/flecha/rojo/caballo.png",
+          "ancho": 240,
+          "alto": 360
+        },
+        "240": {
+          "archivo": "png/240/flecha/rojo/caballo.png",
+          "ancho": 480,
+          "alto": 720
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#B8323C",
+      "forma": "caballo",
+      "origen_svg": [
+        50,
+        250
+      ],
+      "destino_svg": [
+        150,
+        50
+      ],
+      "orientacion": "arriba_y_derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "marca.circulo_azul": {
+      "id": "marca.circulo_azul",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/circulo_azul.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/circulo_azul.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/circulo_azul.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/circulo_azul.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.fondo_azul": {
+      "id": "marca.fondo_azul",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/fondo_azul.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/fondo_azul.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/fondo_azul.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/fondo_azul.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "es_relleno_auxiliar": true,
+      "no_usar_como_unica_senal": true
+    },
+    "flecha.azul.continua": {
+      "id": "flecha.azul.continua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/azul/continua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/azul/continua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/azul/continua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/azul/continua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#2563A6",
+      "forma": "continua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.azul.discontinua": {
+      "id": "flecha.azul.discontinua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/azul/discontinua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/azul/discontinua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/azul/discontinua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/azul/discontinua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#2563A6",
+      "forma": "discontinua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.azul.caballo": {
+      "id": "flecha.azul.caballo",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/azul/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/azul/caballo.png",
+          "ancho": 120,
+          "alto": 180
+        },
+        "120": {
+          "archivo": "png/120/flecha/azul/caballo.png",
+          "ancho": 240,
+          "alto": 360
+        },
+        "240": {
+          "archivo": "png/240/flecha/azul/caballo.png",
+          "ancho": 480,
+          "alto": 720
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#2563A6",
+      "forma": "caballo",
+      "origen_svg": [
+        50,
+        250
+      ],
+      "destino_svg": [
+        150,
+        50
+      ],
+      "orientacion": "arriba_y_derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "marca.circulo_verde": {
+      "id": "marca.circulo_verde",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/circulo_verde.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/circulo_verde.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/circulo_verde.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/circulo_verde.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.fondo_verde": {
+      "id": "marca.fondo_verde",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/fondo_verde.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/fondo_verde.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/fondo_verde.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/fondo_verde.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "es_relleno_auxiliar": true,
+      "no_usar_como_unica_senal": true
+    },
+    "flecha.verde.continua": {
+      "id": "flecha.verde.continua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/verde/continua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/verde/continua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/verde/continua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/verde/continua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#28784A",
+      "forma": "continua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.verde.discontinua": {
+      "id": "flecha.verde.discontinua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/verde/discontinua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/verde/discontinua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/verde/discontinua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/verde/discontinua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#28784A",
+      "forma": "discontinua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.verde.caballo": {
+      "id": "flecha.verde.caballo",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/verde/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/verde/caballo.png",
+          "ancho": 120,
+          "alto": 180
+        },
+        "120": {
+          "archivo": "png/120/flecha/verde/caballo.png",
+          "ancho": 240,
+          "alto": 360
+        },
+        "240": {
+          "archivo": "png/240/flecha/verde/caballo.png",
+          "ancho": 480,
+          "alto": 720
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#28784A",
+      "forma": "caballo",
+      "origen_svg": [
+        50,
+        250
+      ],
+      "destino_svg": [
+        150,
+        50
+      ],
+      "orientacion": "arriba_y_derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "marca.circulo_ambar": {
+      "id": "marca.circulo_ambar",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/circulo_ambar.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/circulo_ambar.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/circulo_ambar.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/circulo_ambar.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "marca.fondo_ambar": {
+      "id": "marca.fondo_ambar",
+      "tipo": "marca",
+      "descripcion": "",
+      "svg": "svg/marca/fondo_ambar.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/marca/fondo_ambar.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/marca/fondo_ambar.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/marca/fondo_ambar.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "es_relleno_auxiliar": true,
+      "no_usar_como_unica_senal": true
+    },
+    "flecha.ambar.continua": {
+      "id": "flecha.ambar.continua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/ambar/continua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/ambar/continua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/ambar/continua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/ambar/continua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#D49A28",
+      "forma": "continua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.ambar.discontinua": {
+      "id": "flecha.ambar.discontinua",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/ambar/discontinua.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/ambar/discontinua.png",
+          "ancho": 180,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/flecha/ambar/discontinua.png",
+          "ancho": 360,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/flecha/ambar/discontinua.png",
+          "ancho": 720,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#D49A28",
+      "forma": "discontinua",
+      "origen_svg": [
+        50,
+        50
+      ],
+      "destino_svg": [
+        250,
+        50
+      ],
+      "orientacion": "derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "flecha.ambar.caballo": {
+      "id": "flecha.ambar.caballo",
+      "tipo": "flecha",
+      "descripcion": "",
+      "svg": "svg/flecha/ambar/caballo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/flecha/ambar/caballo.png",
+          "ancho": 120,
+          "alto": 180
+        },
+        "120": {
+          "archivo": "png/120/flecha/ambar/caballo.png",
+          "ancho": 240,
+          "alto": 360
+        },
+        "240": {
+          "archivo": "png/240/flecha/ambar/caballo.png",
+          "ancho": 480,
+          "alto": 720
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#D49A28",
+      "forma": "caballo",
+      "origen_svg": [
+        50,
+        250
+      ],
+      "destino_svg": [
+        150,
+        50
+      ],
+      "orientacion": "arriba_y_derecha",
+      "uso": "Muestra PNG fija y maestro SVG; recorridos variables requieren geometría."
+    },
+    "distintivo.atencion": {
+      "id": "distintivo.atencion",
+      "tipo": "distintivo",
+      "descripcion": "",
+      "svg": "svg/distintivo/atencion.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/distintivo/atencion.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/distintivo/atencion.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/distintivo/atencion.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "distintivo.apoyo": {
+      "id": "distintivo.apoyo",
+      "tipo": "distintivo",
+      "descripcion": "",
+      "svg": "svg/distintivo/apoyo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/distintivo/apoyo.png",
+          "ancho": 60,
+          "alto": 60
+        },
+        "120": {
+          "archivo": "png/120/distintivo/apoyo.png",
+          "ancho": 120,
+          "alto": 120
+        },
+        "240": {
+          "archivo": "png/240/distintivo/apoyo.png",
+          "ancho": 240,
+          "alto": 240
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    },
+    "icono.anotar.grafito": {
+      "id": "icono.anotar.grafito",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/anotar/grafito.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/anotar/grafito.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/anotar/grafito.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/anotar/grafito.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#252A30",
+      "accion": "anotar"
+    },
+    "icono.anotar.marfil": {
+      "id": "icono.anotar.marfil",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/anotar/marfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/anotar/marfil.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/anotar/marfil.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/anotar/marfil.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#FAF7EE",
+      "accion": "anotar"
+    },
+    "icono.ocultar.grafito": {
+      "id": "icono.ocultar.grafito",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/ocultar/grafito.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/ocultar/grafito.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/ocultar/grafito.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/ocultar/grafito.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#252A30",
+      "accion": "ocultar"
+    },
+    "icono.ocultar.marfil": {
+      "id": "icono.ocultar.marfil",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/ocultar/marfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/ocultar/marfil.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/ocultar/marfil.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/ocultar/marfil.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#FAF7EE",
+      "accion": "ocultar"
+    },
+    "icono.limpiar.grafito": {
+      "id": "icono.limpiar.grafito",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/limpiar/grafito.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/limpiar/grafito.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/limpiar/grafito.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/limpiar/grafito.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#252A30",
+      "accion": "limpiar"
+    },
+    "icono.limpiar.marfil": {
+      "id": "icono.limpiar.marfil",
+      "tipo": "icono",
+      "descripcion": "",
+      "svg": "svg/icono/limpiar/marfil.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/icono/limpiar/marfil.png",
+          "ancho": 24,
+          "alto": 24
+        },
+        "120": {
+          "archivo": "png/120/icono/limpiar/marfil.png",
+          "ancho": 48,
+          "alto": 48
+        },
+        "240": {
+          "archivo": "png/240/icono/limpiar/marfil.png",
+          "ancho": 96,
+          "alto": 96
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "color": "#FAF7EE",
+      "accion": "limpiar"
+    },
+    "glifo.grafito.a": {
+      "id": "glifo.grafito.a",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/a.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/a.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/a.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/a.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "a",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.a": {
+      "id": "glifo.marfil.a",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/a.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/a.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/a.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/a.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "a",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.b": {
+      "id": "glifo.grafito.b",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/b.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/b.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/b.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/b.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "b",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.b": {
+      "id": "glifo.marfil.b",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/b.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/b.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/b.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/b.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "b",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.c": {
+      "id": "glifo.grafito.c",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/c.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/c.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/c.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/c.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "c",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.c": {
+      "id": "glifo.marfil.c",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/c.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/c.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/c.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/c.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "c",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.d": {
+      "id": "glifo.grafito.d",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/d.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/d.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/d.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/d.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "d",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.d": {
+      "id": "glifo.marfil.d",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/d.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/d.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/d.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/d.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "d",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.e": {
+      "id": "glifo.grafito.e",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/e.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/e.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/e.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/e.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "e",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.e": {
+      "id": "glifo.marfil.e",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/e.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/e.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/e.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/e.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "e",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.f": {
+      "id": "glifo.grafito.f",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/f.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/f.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/f.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/f.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "f",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.f": {
+      "id": "glifo.marfil.f",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/f.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/f.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/f.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/f.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "f",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.g": {
+      "id": "glifo.grafito.g",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/g.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/g.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/g.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/g.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "g",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.g": {
+      "id": "glifo.marfil.g",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/g.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/g.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/g.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/g.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "g",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.h": {
+      "id": "glifo.grafito.h",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/h.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/h.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/h.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/h.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "h",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.h": {
+      "id": "glifo.marfil.h",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/h.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/h.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/h.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/h.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "h",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.1": {
+      "id": "glifo.grafito.1",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/1.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/1.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/1.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/1.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "1",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.1": {
+      "id": "glifo.marfil.1",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/1.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/1.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/1.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/1.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "1",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.2": {
+      "id": "glifo.grafito.2",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/2.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/2.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/2.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/2.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "2",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.2": {
+      "id": "glifo.marfil.2",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/2.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/2.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/2.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/2.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "2",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.3": {
+      "id": "glifo.grafito.3",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/3.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/3.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/3.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/3.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "3",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.3": {
+      "id": "glifo.marfil.3",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/3.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/3.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/3.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/3.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "3",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.4": {
+      "id": "glifo.grafito.4",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/4.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/4.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/4.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/4.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "4",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.4": {
+      "id": "glifo.marfil.4",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/4.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/4.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/4.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/4.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "4",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.5": {
+      "id": "glifo.grafito.5",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/5.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/5.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/5.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/5.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "5",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.5": {
+      "id": "glifo.marfil.5",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/5.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/5.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/5.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/5.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "5",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.6": {
+      "id": "glifo.grafito.6",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/6.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/6.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/6.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/6.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "6",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.6": {
+      "id": "glifo.marfil.6",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/6.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/6.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/6.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/6.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "6",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.7": {
+      "id": "glifo.grafito.7",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/7.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/7.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/7.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/7.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "7",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.7": {
+      "id": "glifo.marfil.7",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/7.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/7.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/7.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/7.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "7",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.grafito.8": {
+      "id": "glifo.grafito.8",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/grafito/8.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/grafito/8.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/grafito/8.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/grafito/8.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "8",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "glifo.marfil.8": {
+      "id": "glifo.marfil.8",
+      "tipo": "glifo",
+      "descripcion": "",
+      "svg": "svg/glifo/marfil/8.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/glifo/marfil/8.png",
+          "ancho": 15,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/glifo/marfil/8.png",
+          "ancho": 30,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/glifo/marfil/8.png",
+          "ancho": 60,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "8",
+      "perfil_tipografico": "coordenada",
+      "nota": "Glifo auxiliar, altura de fuente 22% de la casilla; para texto dinámico usar el perfil de fuente."
+    },
+    "secuencia.1": {
+      "id": "secuencia.1",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/1.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/1.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/1.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/1.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 1,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.2": {
+      "id": "secuencia.2",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/2.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/2.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/2.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/2.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 2,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.3": {
+      "id": "secuencia.3",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/3.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/3.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/3.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/3.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 3,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.4": {
+      "id": "secuencia.4",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/4.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/4.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/4.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/4.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 4,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.5": {
+      "id": "secuencia.5",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/5.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/5.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/5.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/5.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 5,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.6": {
+      "id": "secuencia.6",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/6.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/6.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/6.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/6.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 6,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.7": {
+      "id": "secuencia.7",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/7.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/7.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/7.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/7.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 7,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.8": {
+      "id": "secuencia.8",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/8.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/8.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/8.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/8.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 8,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.9": {
+      "id": "secuencia.9",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/9.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/9.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/9.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/9.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 9,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "secuencia.10": {
+      "id": "secuencia.10",
+      "tipo": "secuencia",
+      "descripcion": "",
+      "svg": "svg/secuencia/10.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/secuencia/10.png",
+          "ancho": 18,
+          "alto": 18
+        },
+        "120": {
+          "archivo": "png/120/secuencia/10.png",
+          "ancho": 36,
+          "alto": 36
+        },
+        "240": {
+          "archivo": "png/240/secuencia/10.png",
+          "ancho": 72,
+          "alto": 72
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "valor": 10,
+      "nota": "Modelo ampliable; números mayores se dibujan con el perfil secuencia."
+    },
+    "tipografia.muestra_titulo": {
+      "id": "tipografia.muestra_titulo",
+      "tipo": "muestra_tipografica",
+      "descripcion": "",
+      "svg": "svg/tipografia/muestra_titulo.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/tipografia/muestra_titulo.png",
+          "ancho": 252,
+          "alto": 42
+        },
+        "120": {
+          "archivo": "png/120/tipografia/muestra_titulo.png",
+          "ancho": 504,
+          "alto": 84
+        },
+        "240": {
+          "archivo": "png/240/tipografia/muestra_titulo.png",
+          "ancho": 1008,
+          "alto": 168
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "Ajedrez · Club",
+      "familia": "Georgia",
+      "tamano_svg": 32
+    },
+    "tipografia.muestra_interfaz": {
+      "id": "tipografia.muestra_interfaz",
+      "tipo": "muestra_tipografica",
+      "descripcion": "",
+      "svg": "svg/tipografia/muestra_interfaz.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/tipografia/muestra_interfaz.png",
+          "ancho": 252,
+          "alto": 42
+        },
+        "120": {
+          "archivo": "png/120/tipografia/muestra_interfaz.png",
+          "ancho": 504,
+          "alto": 84
+        },
+        "240": {
+          "archivo": "png/240/tipografia/muestra_interfaz.png",
+          "ancho": 1008,
+          "alto": 168
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "Anotar   Ocultar marcas   Limpiar",
+      "familia": "Segoe UI",
+      "tamano_svg": 18
+    },
+    "tipografia.muestra_coordenadas": {
+      "id": "tipografia.muestra_coordenadas",
+      "tipo": "muestra_tipografica",
+      "descripcion": "",
+      "svg": "svg/tipografia/muestra_coordenadas.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/tipografia/muestra_coordenadas.png",
+          "ancho": 252,
+          "alto": 42
+        },
+        "120": {
+          "archivo": "png/120/tipografia/muestra_coordenadas.png",
+          "ancho": 504,
+          "alto": 84
+        },
+        "240": {
+          "archivo": "png/240/tipografia/muestra_coordenadas.png",
+          "ancho": 1008,
+          "alto": 168
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "a b c d e f g h    1 2 3 4 5 6 7 8",
+      "familia": "Segoe UI",
+      "tamano_svg": 18
+    },
+    "tipografia.muestra_estados": {
+      "id": "tipografia.muestra_estados",
+      "tipo": "muestra_tipografica",
+      "descripcion": "",
+      "svg": "svg/tipografia/muestra_estados.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/tipografia/muestra_estados.png",
+          "ancho": 252,
+          "alto": 42
+        },
+        "120": {
+          "archivo": "png/120/tipografia/muestra_estados.png",
+          "ancho": 504,
+          "alto": 84
+        },
+        "240": {
+          "archivo": "png/240/tipografia/muestra_estados.png",
+          "ancho": 1008,
+          "alto": 168
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto": "Hipótesis · Jaque · Promoción",
+      "familia": "Segoe UI",
+      "tamano_svg": 18
+    },
+    "control.boton_principal": {
+      "id": "control.boton_principal",
+      "tipo": "control",
+      "descripcion": "",
+      "svg": "svg/control/boton_principal.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/control/boton_principal.png",
+          "ancho": 144,
+          "alto": 36
+        },
+        "120": {
+          "archivo": "png/120/control/boton_principal.png",
+          "ancho": 288,
+          "alto": 72
+        },
+        "240": {
+          "archivo": "png/240/control/boton_principal.png",
+          "ancho": 576,
+          "alto": 144
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto_perfil": "interfaz",
+      "texto_color": "#FAF7EE"
+    },
+    "control.boton_secundario": {
+      "id": "control.boton_secundario",
+      "tipo": "control",
+      "descripcion": "",
+      "svg": "svg/control/boton_secundario.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/control/boton_secundario.png",
+          "ancho": 144,
+          "alto": 36
+        },
+        "120": {
+          "archivo": "png/120/control/boton_secundario.png",
+          "ancho": 288,
+          "alto": 72
+        },
+        "240": {
+          "archivo": "png/240/control/boton_secundario.png",
+          "ancho": 576,
+          "alto": 144
+        }
+      },
+      "transparente": true,
+      "ancla": "centro",
+      "texto_perfil": "interfaz",
+      "texto_color": "#252A30"
+    },
+    "control.divisor": {
+      "id": "control.divisor",
+      "tipo": "control",
+      "descripcion": "",
+      "svg": "svg/control/divisor.svg",
+      "png": {
+        "60": {
+          "archivo": "png/60/control/divisor.png",
+          "ancho": 180,
+          "alto": 6
+        },
+        "120": {
+          "archivo": "png/120/control/divisor.png",
+          "ancho": 360,
+          "alto": 12
+        },
+        "240": {
+          "archivo": "png/240/control/divisor.png",
+          "ancho": 720,
+          "alto": 24
+        }
+      },
+      "transparente": true,
+      "ancla": "centro"
+    }
+  }
+}

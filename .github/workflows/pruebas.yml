@@ -1,0 +1,42 @@
+name: Pruebas y paquete de la versión local
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v7
+
+      - name: Preparar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Ejecutar las pruebas del proyecto
+        run: python -B -X utf8 -m unittest discover -s pruebas -t . -p "test_*.py"
+
+      - name: Construir el paquete con sus recursos
+        run: python -m pip wheel . --no-deps --wheel-dir dist
+
+      - name: Crear un entorno limpio
+        run: python -m venv .venv-comprobacion
+
+      - name: Instalar el paquete construido
+        run: |
+          $paquete = Get-ChildItem -LiteralPath dist -Filter 'ajedrez_local-*.whl'
+          .\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps $paquete.FullName
+
+      - name: Comprobar la aplicación instalada
+        run: .\.venv-comprobacion\Scripts\python.exe -I -B -X utf8 .\herramientas\comprobar_instalacion.py
