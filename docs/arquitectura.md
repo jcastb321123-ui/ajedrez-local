@@ -13,6 +13,7 @@ las demostraciones de consola y las pruebas aprovechan esa separación.
 | Sesión | `Sesion`, `SesionLocal`, `SesionAnalisis` | Exponen la partida y las acciones disponibles; determinan los colores controlados y seleccionables. |
 | Juego local | `EmisorJugador`, `InterfazJuego`, `AutenticadorJugadores` | Identifican al emisor, comprueban el turno y administran las solicitudes de la partida local. |
 | Modelo | `Partida`, `Jugada`, `EstadoPosicion`, `Tablero`, piezas | Validan y aplican movimientos, conservan estados e historial y determinan el resultado. |
+| Persistencia | Funciones de `persistencia.py` | Convierten partidas a datos versionados, las reconstruyen mediante el modelo y leen o escriben archivos JSON. |
 | Dibujo y preferencias | `Casillero`, `CasillaVisual`, `TemaGrafico`, `OpcionesVisuales` | Mantienen los elementos del Canvas, recursos, capas y preferencias visuales. |
 
 `InterfazJuego` no es una ventana: forma parte del flujo de solicitudes de una
@@ -99,8 +100,12 @@ historial de la partida que se está jugando.
 - **Temas:** aportar los recursos y datos de estilo que consume `TemaGrafico`,
   y las preferencias de comportamiento de `OpcionesVisuales`. El menú para
   modificarlos todavía no está implementado.
-- **Persistencia:** definir un formato del estado, los metadatos y el historial
-  del modelo. No guardar identificadores del Canvas ni widgets de Tkinter.
+- **Persistencia:** `partida_a_datos` y `partida_desde_datos` separan el formato
+  del acceso a archivos. Un futuro almacenamiento en base de datos puede reutilizar
+  esa conversión. `SesionLocal` e `InterfazJuego` admiten una `Partida` ya reconstruida
+  mediante el parámetro nominal opcional `partida`; no se reemplazan atributos internos.
+  La capacidad `admite_guardado_local` decide si la aplicación puede guardar esa sesión.
+  Consulta el [formato y su alcance](persistencia.md).
 - **IA y red:** añadir los componentes que producen o transportan solicitudes,
   junto con su coordinación con el bucle de eventos. La base actual separa
   responsabilidades, pero aún no implementa ese trabajo asíncrono.

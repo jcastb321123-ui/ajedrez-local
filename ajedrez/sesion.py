@@ -70,6 +70,11 @@ class Sesion(ABC):
         return False
 
     @property
+    def admite_guardado_local(self) -> bool:
+        """Cada modalidad decide si permite exportar su partida localmente."""
+        return False
+
+    @property
     def admite_propuestas_tablas(self) -> bool:
         return False
 
@@ -342,7 +347,9 @@ class EmisorJugador:
 
 class SesionLocal(Sesion):
     def __init__(self,
-                 asignacion_colores: AsignacionColores):
+                 asignacion_colores: AsignacionColores,
+                 *,
+                 partida: Partida | None = None):
         self._autenticador = self._preparar_autenticador()
 
         self._asignacion_colores = asignacion_colores
@@ -350,7 +357,7 @@ class SesionLocal(Sesion):
         claves = self._asignacion_colores.asignar_colores(self.autenticador,
                                                           asignacion_colores.modalidad)
         
-        self._juego = InterfazJuego(self.autenticador)
+        self._juego = InterfazJuego(self.autenticador, partida=partida)
 
         self._emisor_1 = EmisorJugador(self.juego,
                                        claves[0])
@@ -402,6 +409,10 @@ class SesionLocal(Sesion):
 
     @property
     def admite_abandono(self) -> bool:
+        return True
+
+    @property
+    def admite_guardado_local(self) -> bool:
         return True
 
     @property

@@ -185,7 +185,7 @@ class PruebasNuevaPartida(unittest.TestCase):
         vista.casillero.aplicar_marca((2, 0), 'fondo_azul')
         dibujos = vista.casillero.canvas.find_all()
         partida = pickle.dumps(vista.sesion.partida)
-        with patch('tkinter.messagebox.askyesno', return_value=False) as preguntar:
+        with patch('tkinter.messagebox.askyesnocancel', return_value=None) as preguntar:
             aplicacion.boton_nueva_partida.invoke()
         preguntar.assert_called_once()
         self.assertIs(aplicacion.interfaz_partida, vista)
@@ -204,7 +204,7 @@ class PruebasNuevaPartida(unittest.TestCase):
                 contenedor = aplicacion.contenedor_partida
                 self.mover_e2_e4(anterior)
                 anterior.casillero.aplicar_marca((2, 0), 'fondo_azul')
-                with patch('tkinter.messagebox.askyesno', return_value=True) as preguntar:
+                with patch('tkinter.messagebox.askyesnocancel', return_value=False) as preguntar:
                     boton.invoke()
                 preguntar.assert_called_once()
                 actual = aplicacion.interfaz_partida

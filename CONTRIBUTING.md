@@ -69,7 +69,9 @@ o el historial.
 
 En una solicitud de cambios, explica qué problema resuelve, qué comportamiento
 cambia y qué pruebas se han ejecutado. Las modalidades remota y contra IA, la
-persistencia y el menú de preferencias siguen pendientes de diseño e integración.
+base de datos de usuarios y el menú de preferencias siguen pendientes de diseño
+e integración. El formato de archivos de partida está documentado en
+[docs/persistencia.md](docs/persistencia.md).
 
 ## Publicar una versión
 

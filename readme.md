@@ -4,16 +4,16 @@ Aplicación de ajedrez en Python y Tkinter, con partidas entre dos personas en e
 mismo equipo y herramientas para explorar posiciones y variantes sin alterar la
 partida original.
 
-**Versión 0.1.0 · Proyecto en desarrollo.** La prioridad actual es consolidar una
-versión local comprobable y documentada. El juego contra IA, las partidas remotas
-y la persistencia de datos todavía no están disponibles.
+**Versión 0.2.0 · Guardado y recuperación de partidas locales.** Incluye archivos
+JSON con el historial, el turno y el resultado. El juego contra IA, las partidas
+remotas y la base de datos de usuarios todavía no están disponibles.
 
-[Descargar v0.1.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.1.0)
+[Descargar v0.2.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.2.0)
 · [Pruebas automáticas](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
 
 ![Partida local con navegación, selección de piezas y anotaciones estratégicas](docs/imagenes/partida-local.png)
 
-Captura de la aplicación: partida local con una flecha de análisis y una pieza
+Captura de v0.2.0: partida local con una flecha de análisis y una pieza
 seleccionada. Las anotaciones no modifican la posición del modelo.
 
 ## Para conocer el proyecto
@@ -26,6 +26,8 @@ seleccionada. Las anotaciones no modifican la posición del modelo.
 ## Funcionalidades disponibles
 
 - Partida local con validación de movimientos y alternancia de turnos.
+- Guardado y recuperación de partidas locales en archivos JSON, con historial,
+  turno, resultado y metadatos para los movimientos especiales y las tablas.
 - Capturas, enroque, captura al paso y selector gráfico de promoción.
 - Abandono y propuestas de tablas por acuerdo, con controles para ambos jugadores.
   El abandono termina en tablas cuando se detecta que el adversario carece
@@ -68,14 +70,14 @@ administrador. El funcionamiento en otros sistemas aún no se ha verificado.
 
 ### Desde la entrega publicada
 
-Descarga `ajedrez_local-0.1.0-py3-none-any.whl` desde
-[la entrega v0.1.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.1.0).
+Descarga `ajedrez_local-0.2.0-py3-none-any.whl` desde
+[la entrega v0.2.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.2.0).
 Abre PowerShell en la carpeta donde lo has guardado y ejecuta:
 
 ```powershell
 python --version
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.1.0-py3-none-any.whl
+.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.2.0-py3-none-any.whl
 .\.venv\Scripts\ajedrez.exe
 ```
 
@@ -143,6 +145,29 @@ Tras cerrar la aplicación, ejecuta `Pop-Location` para regresar a la carpeta an
 
 La aplicación abre una partida nueva. Ambas personas comparten ratón y tablero,
 y se mueve por turnos.
+
+### Guardar y recuperar una partida
+
+- **Guardar partida** pide un archivo `.json` la primera vez. Las siguientes
+  pulsaciones actualizan ese archivo; su nombre aparece en el título de la ventana.
+- **Abrir partida** recupera la posición vigente y todo el historial registrado.
+  Puedes seguir jugando si está en curso, o navegar y analizar si ha terminado.
+- Antes de abrir otra partida, iniciar una nueva o cerrar con cambios en la
+  partida original, puedes guardar, descartar esos cambios o cancelar la acción.
+  Cancelar el diálogo de archivo o fallar la escritura conserva la partida abierta.
+- Si falta elegir una pieza de promoción, completa la elección antes de guardar.
+
+Se guarda siempre la **partida original**, aunque estés viendo una posición
+histórica o trabajando en un análisis. Las variantes, anotaciones, preferencias
+visuales y propuestas de tablas pendientes son temporales y no se guardan.
+Una posición inicial personalizada conserva el turno, los indicadores de primer
+movimiento, el peón capturable al paso y el contador de medios movimientos.
+
+El archivo puede copiarse a otro equipo con una versión compatible de la aplicación.
+Un archivo no válido se rechaza sin reemplazar la partida abierta. Consulta el
+[formato de persistencia](docs/persistencia.md) para conocer su estructura.
+
+### Controles del tablero
 
 | Acción | Control |
 | --- | --- |
@@ -274,7 +299,7 @@ Para comprobar únicamente el arranque:
 
 La batería incluye casos del modelo, sesiones, posiciones iniciales, movimientos
 especiales, abandono, tablas por acuerdo y por reglas de movimientos y repetición,
-análisis, marcas, temas y arranque. Algunas pruebas utilizan ventanas
+análisis, marcas, temas, arranque y persistencia entre ejecuciones. Algunas pruebas utilizan ventanas
 ocultas de Tkinter y pueden omitirse si no hay entorno gráfico; esa omisión no
 verifica la interfaz. Las pruebas del catálogo fallan si faltan los recursos.
 
@@ -290,7 +315,7 @@ proyecto. Desde su carpeta exterior y con el entorno de desarrollo ya creado:
 ```powershell
 .\.venv\Scripts\python.exe -m pip wheel . --no-deps --wheel-dir dist
 .\.venv\Scripts\python.exe -m venv .venv-comprobacion
-.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.1.0-py3-none-any.whl
+.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.2.0-py3-none-any.whl
 .\.venv-comprobacion\Scripts\python.exe -I -B -X utf8 .\herramientas\comprobar_instalacion.py
 ```
 
@@ -303,7 +328,8 @@ versión. Al cambiar la versión, cambia también el nombre del archivo del coma
 La opción `-I` evita que Python importe las fuentes del proyecto por su ubicación
 o por `PYTHONPATH`. El comprobador verifica la copia instalada, sus metadatos y
 su lanzador; crea una ventana oculta con las imágenes reales y reproduce
-`e2–e4` y `e7–e5`, comprobando el modelo y el tablero gráfico. Termina con error
+`e2–e4` y `e7–e5`, comprobando el modelo y el tablero gráfico. También guarda una
+partida, la recupera y continúa jugando con la copia instalada. Termina con error
 si falta Tkinter, no hay entorno gráfico o falla alguna comprobación.
 
 El flujo [Pruebas y paquete de la versión local](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
@@ -319,8 +345,10 @@ en [CONTRIBUTING.md](CONTRIBUTING.md#publicar-una-versión).
 ## Limitaciones y próximos pasos
 
 - No hay oponente de IA ni comunicación entre jugadores por red.
-- No hay registro de usuarios, base de datos ni recuperación de partidas al
-  reiniciar. Las claves internas de sesión no sustituyen estas funciones.
+- No hay registro de usuarios ni base de datos con una biblioteca de partidas.
+  El guardado disponible utiliza archivos locales elegidos por el usuario.
+  Las claves internas de sesión no son cuentas de usuario y se generan de nuevo
+  al abrir una partida.
 - No hay menú general de preferencias gráficas ni animación del desplazamiento.
 - La detección de posiciones muertas cubre el material insuficiente indicado
   y los bloqueos permanentes descritos, desde la posición inicial y después de

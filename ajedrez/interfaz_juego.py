@@ -11,9 +11,11 @@ class PiezaPromocion(Enum):
 
 class InterfazJuego:
     def __init__(self,
-                 autenticador: AutenticadorJugadores[Color]):
+                 autenticador: AutenticadorJugadores[Color],
+                 *,
+                 partida: Partida | None = None):
         self._autenticador = autenticador
-        self._partida = Partida()
+        self._partida = Partida() if partida is None else partida
         self._jugada_pendiente = None
         self._proponente_tablas: Color | None = None
 

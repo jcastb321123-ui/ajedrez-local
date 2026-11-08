@@ -6,6 +6,7 @@ No añade las fuentes a sys.path ni sustituye las imágenes o los widgets por do
 from importlib.metadata import distribution
 from pathlib import Path
 from types import SimpleNamespace
+from tempfile import TemporaryDirectory
 import sys
 import sysconfig
 import tkinter as tk
@@ -14,9 +15,25 @@ import unittest
 import ajedrez
 from ajedrez.aplicacion import AplicacionAjedrez, main
 from ajedrez.piezas import Color, PeonBlanco, PeonNegro
+from ajedrez.partida import Partida
+from ajedrez.persistencia import cargar_partida, guardar_partida
 
 
 class ComprobacionInstalacion(unittest.TestCase):
+    def test_guardado_y_recuperacion_del_paquete_instalado(self):
+        partida = Partida()
+        self.assertIsNone(partida.procesar_solicitud((1, 4), (3, 4)))
+        with TemporaryDirectory() as carpeta:
+            ruta = Path(carpeta) / 'partida.json'
+            guardar_partida(partida, ruta)
+            recuperada = cargar_partida(ruta)
+        self.assertIsNot(recuperada, partida)
+        self.assertEqual(recuperada.contador_jugadas, 1)
+        self.assertIs(recuperada.jugador, Color.Negro)
+        self.assertIsNone(recuperada.procesar_solicitud((6, 4), (4, 4)))
+        self.assertEqual(recuperada.contador_jugadas, 2)
+        self.assertIs(recuperada.ultima_jugada.anterior.siguiente, recuperada.ultima_jugada)
+
     def test_paquete_metadatos_y_lanzador_instalados(self):
         self.assertTrue(sys.flags.isolated, 'Ejecuta este archivo con python -I.')
         ruta_paquete = Path(ajedrez.__file__).resolve()
