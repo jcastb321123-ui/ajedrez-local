@@ -8,7 +8,7 @@ las demostraciones de consola y las pruebas aprovechan esa separación.
 
 | Capa | Objetos principales | Responsabilidad |
 | --- | --- | --- |
-| Construcción de la aplicación | `AplicacionAjedrez` | Crea o recibe la ventana, carga el tema y prepara la partida local y sus controles. |
+| Construcción de la aplicación | `AplicacionAjedrez` | Crea o recibe la ventana, recupera las preferencias y carga el tema antes de preparar la partida local y sus controles. |
 | Interacción gráfica | `InterfazPartida`, `PanelAnalisis` | Traducen los eventos en solicitudes, muestran estados y coordinan selección, promoción, navegación y análisis. |
 | Sesión | `Sesion`, `SesionLocal`, `SesionAnalisis` | Exponen la partida y las acciones disponibles; determinan los colores controlados y seleccionables. |
 | Juego local | `EmisorJugador`, `InterfazJuego`, `AutenticadorJugadores` | Identifican al emisor, comprueban el turno y administran las solicitudes de la partida local. |
@@ -16,9 +16,47 @@ las demostraciones de consola y las pruebas aprovechan esa separación.
 | Persistencia | `persistencia.py`, `RepositorioPartidasSQLite`, `ResumenPartida` | Convierten partidas a datos versionados, reconstruyen el modelo y almacenan archivos JSON o registros de biblioteca. |
 | Biblioteca gráfica | `VentanaBiblioteca` | Lista metadatos y delega en la aplicación la apertura, el guardado y la eliminación. |
 | Dibujo y preferencias | `Casillero`, `CasillaVisual`, `TemaGrafico`, `OpcionesVisuales` | Mantienen los elementos del Canvas, recursos, capas y preferencias visuales. |
+| Diálogo de preferencias | `DialogoPreferencias` | Conserva elecciones provisionales del tema y del modo de jaque, y las comunica sólo al aplicar. |
+| Persistencia de preferencias | `PreferenciasGraficas`, `preferencias_graficas.py` | Almacenan configuración gráfica versionada, sin depender de Tkinter, del modelo o de una modalidad. |
 
 `InterfazJuego` no es una ventana: forma parte del flujo de solicitudes de una
 sesión local. `InterfazPartida` es la clase que maneja los eventos de Tkinter.
+
+`AplicacionAjedrez` conserva las opciones visuales confirmadas durante su vida y
+las proporciona a cada nueva interfaz. El diálogo recibe las opciones, el tema
+actual, los identificadores y nombres del catálogo y una función para aplicarlos;
+no conoce la sesión, el modelo ni la biblioteca. La aplicación carga el tema
+completo antes de modificar la vista. Si falla la carga, comunica el error y el
+diálogo conserva su selección provisional sin confirmar ningún cambio.
+`InterfazPartida.aplicar_opciones_visuales` actualiza el jaque y propaga la elección
+a su panel de análisis si ya existe. El editor conserva las opciones sin dibujar
+indicadores sobre su borrador; al salir se actualiza el tablero de análisis.
+Cancelar o restablecer la selección del diálogo no modifica las opciones vigentes.
+`preferencias_graficas.py` agrupa el identificador del tema y las opciones visuales
+en una configuración inmutable. Sólo serializa datos JSON; no guarda imágenes ni
+identificadores del Canvas. La aplicación carga el archivo antes de construir la
+vista y acepta `ruta_preferencias` por nombre para utilizar otro archivo, por
+ejemplo en pruebas. El valor omitido selecciona la carpeta de configuración del
+usuario.
+
+Confirmar preferencias completa primero la carga del tema, después escribe un
+archivo temporal vecino y lo sustituye al terminar, y sólo entonces cambia la
+vista. Un error de escritura conserva el archivo anterior y la configuración
+vigente. Leer un archivo ausente devuelve valores predeterminados; un archivo
+inválido o inaccesible provoca un aviso al arrancar y no se sobrescribe. El fallo
+de un tema guardado permite usar el predeterminado conservando las opciones de
+jaque válidas. La biblioteca, los archivos de partida y sus cambios pendientes
+son independientes de este proceso. El formato se describe en
+[preferencias gráficas](preferencias.md).
+
+`Casillero.aplicar_tema` sustituye las imágenes de los elementos existentes del
+Canvas. Los temas del catálogo comparten claves y tamaño; no se reconstruyen
+el modelo, las casillas ni los registros de anotaciones. Las marcas con clave
+conservan su identidad incluso cuando comparten un PNG, y las flechas conservan
+su clave de color y su selección. `InterfazPartida.aplicar_tema` coordina el
+tablero, el selector de promoción pendiente y el panel de análisis. Si el editor
+está abierto, `PanelAnalisis` actualiza también el tablero oculto que restaurará
+al cancelar la edición, sin sustituir el borrador.
 
 ## Recorrido de una jugada local
 
@@ -99,8 +137,10 @@ historial de la partida que se está jugando.
   La construcción actual en `AplicacionAjedrez` selecciona una sesión local;
   un futuro menú tendrá que coordinar la creación de otras modalidades.
 - **Temas:** aportar los recursos y datos de estilo que consume `TemaGrafico`,
-  y las preferencias de comportamiento de `OpcionesVisuales`. El menú para
-  modificarlos todavía no está implementado.
+  y las preferencias de comportamiento de `OpcionesVisuales`. El diálogo actual
+  permite elegir el tema y el modo de jaque. `obtener_temas_disponibles` consulta
+  el catálogo sin crear imágenes ni ventanas. El identificador elegido y las
+  opciones de jaque se conservan en el archivo de preferencias del usuario.
 - **Persistencia:** `partida_a_datos` y `partida_desde_datos` separan el formato
   del acceso a archivos. `RepositorioPartidasSQLite` reutiliza esa conversión y
   ofrece guardar, actualizar, listar, cargar y eliminar. `SesionLocal` e `InterfazJuego` admiten una `Partida` ya reconstruida
@@ -136,6 +176,9 @@ funciones para las acciones y una consulta de capacidad; no conoce `SesionLocal`
 - [Posiciones iniciales](../pruebas/test_partida_estado_inicial.py).
 - [Reclamación con movimiento anunciado](../pruebas/test_movimiento_anunciado.py).
 - [Arranque de la aplicación](../pruebas/test_aplicacion.py).
+- [Diálogo y modos de jaque](../pruebas/test_dialogo_preferencias.py).
+- [Cambio de tema sin reconstruir la posición](../pruebas/test_cambio_tema.py).
+- [Preferencias entre ejecuciones y separación de las partidas](../pruebas/test_preferencias_graficas.py).
 - [Comprobador de instalación](../herramientas/comprobar_instalacion.py).
 
 El [README](../readme.md) recoge los comandos, las reglas implementadas y las

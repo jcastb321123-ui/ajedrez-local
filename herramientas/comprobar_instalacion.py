@@ -19,9 +19,38 @@ from ajedrez.piezas import Color, PeonBlanco, PeonNegro
 from ajedrez.partida import Partida
 from ajedrez.persistencia import cargar_partida, guardar_partida
 from ajedrez.repositorio_partidas import RepositorioPartidasSQLite
+from ajedrez.gráficos.opciones_visuales import ModoResaltadoJaque
 
 
 class ComprobacionInstalacion(unittest.TestCase):
+    def setUp(self):
+        self.temporal_preferencias = TemporaryDirectory()
+        self.addCleanup(self.temporal_preferencias.cleanup)
+        self.ruta_preferencias = Path(self.temporal_preferencias.name) / 'preferencias.json'
+
+    def test_preferencias_se_recuperan_al_reiniciar_la_aplicacion_instalada(self):
+        for arranque in range(2):
+            ventana = tk.Tk()
+            ventana.withdraw()
+            errores = []
+            ventana.report_callback_exception = lambda tipo, error, traza: errores.append(error)
+            try:
+                aplicacion = AplicacionAjedrez(ventana=ventana, ruta_preferencias=self.ruta_preferencias)
+                if arranque == 0:
+                    aplicacion.solicitar_preferencias()
+                    dialogo = aplicacion._dialogo_preferencias
+                    dialogo._selector_tema.current(dialogo._identificadores_temas.index('taller.veta_fina'))
+                    dialogo._opciones_jaque[ModoResaltadoJaque.REY_Y_ATACANTES].invoke()
+                    dialogo._boton_aplicar.invoke()
+                    self.assertFalse(dialogo.winfo_exists())
+                self.assertEqual(aplicacion.tema.identificador, 'taller.veta_fina')
+                self.assertIs(aplicacion.interfaz_partida.opciones_visuales.modo_resaltado_jaque,
+                              ModoResaltadoJaque.REY_Y_ATACANTES)
+                self.assertFalse(aplicacion._hay_cambios_sin_guardar())
+                self.assertFalse(errores, repr(errores))
+            finally:
+                ventana.destroy()
+
     def test_biblioteca_sqlite_con_la_interfaz_instalada(self):
         with TemporaryDirectory() as carpeta:
             repositorio = RepositorioPartidasSQLite(Path(carpeta) / 'biblioteca.sqlite3')
@@ -30,7 +59,8 @@ class ComprobacionInstalacion(unittest.TestCase):
             errores = []
             ventana.report_callback_exception = lambda tipo, error, traza: errores.append(error)
             try:
-                aplicacion = AplicacionAjedrez(ventana=ventana, repositorio=repositorio)
+                aplicacion = AplicacionAjedrez(ventana=ventana, repositorio=repositorio,
+                                               ruta_preferencias=self.ruta_preferencias)
                 partida = aplicacion.interfaz_partida.sesion.partida
                 self.assertIsNone(partida.procesar_solicitud((1, 4), (3, 4)))
                 with patch('ajedrez.aplicacion.simpledialog.askstring', return_value='Instalación comprobada'):
@@ -91,7 +121,7 @@ class ComprobacionInstalacion(unittest.TestCase):
         ventana = tk.Tk()
         ventana.withdraw()
         self.addCleanup(ventana.destroy)
-        aplicacion = AplicacionAjedrez(ventana=ventana)
+        aplicacion = AplicacionAjedrez(ventana=ventana, ruta_preferencias=self.ruta_preferencias)
         vista = aplicacion.interfaz_partida
         casillero = vista.casillero
         errores = []

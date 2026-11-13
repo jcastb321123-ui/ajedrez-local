@@ -9,6 +9,7 @@ from __future__ import annotations
 from ..sesion import Sesion, PiezaPromocion
 from ..analisis_partida import AnalisisPartida
 from .graficos_tablero import Casillero
+from .temas_graficos import TemaGrafico
 from .opciones_visuales import (
     OpcionesVisuales, ModoResaltadoJaque, OPCIONES_VISUALES_PREDETERMINADAS,
 )
@@ -61,6 +62,7 @@ class InterfazPartida:
         self._botones_abandono: dict[Color, tk.Button] = {}
         self._botones_propuesta_tablas: dict[Color, tk.Button] = {}
         self._boton_reclamacion_tablas: tk.Button | None = None
+        self._botones_promocion: dict[tuple[str, Color, str], tk.Button] = {}
         self._panel_navegacion = self._crear_panel_navegacion()
 
         # Conexión de eventos y representación inicial.
@@ -91,6 +93,20 @@ class InterfazPartida:
         self.actualizar_resaltado_jaque()
 
         self._actualizar_indicador_contexto()
+
+        if self._panel_analisis is not None:
+            self._panel_analisis.aplicar_opciones_visuales(opciones)
+
+    def aplicar_tema(self, tema: TemaGrafico) -> None:
+        """Actualiza esta vista y su análisis sin reconstruir ningún estado."""
+        anterior = self.casillero.tema
+        self.casillero.aplicar_tema(tema)
+        for clave, boton in self._botones_promocion.items():
+            resaltado = boton.cget('background') == anterior.colores['ambar']
+            boton.configure(image=tema.piezas[clave],
+                            background=tema.colores['ambar' if resaltado else 'marfil'])
+        if self._panel_analisis is not None:
+            self._panel_analisis.aplicar_tema(tema)
 
     def restablecer_opciones_visuales(self) -> None:
         self.aplicar_opciones_visuales(OPCIONES_VISUALES_PREDETERMINADAS)
@@ -918,6 +934,11 @@ class InterfazPartida:
                                                               panel))
         )
 
+        self._botones_promocion = {
+            (nombre, color, "normal"): boton
+            for nombre, boton in zip(("caballo", "alfil", "torre", "dama"), botones)
+        }
+
         c = 0
 
         for boton in botones:
@@ -959,6 +980,7 @@ class InterfazPartida:
                                   destino)
 
         panel.destroy()
+        self._botones_promocion.clear()
         
     def _cancelar_seleccion(self) -> None:
         self.casillero.borrar_seleccion()

@@ -30,7 +30,8 @@ class PruebasBibliotecaAplicacion(unittest.TestCase):
         self.addCleanup(self.assertFalse, self.errores)
         self.addCleanup(self.ventana.destroy)
         self.ventana.report_callback_exception = lambda tipo, error, traza: self.errores.append(error)
-        self.app = AplicacionAjedrez(ventana=self.ventana, repositorio=self.repositorio)
+        self.app = AplicacionAjedrez(ventana=self.ventana, repositorio=self.repositorio,
+                                    ruta_preferencias=Path(self.temporal.name) / 'preferencias.json')
 
     def abrir_biblioteca(self):
         self.app._boton_biblioteca.invoke()

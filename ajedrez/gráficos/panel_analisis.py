@@ -10,6 +10,7 @@ from ..piezas import Color
 from ..sesion import SesionAnalisis
 from .graficos_tablero import Casillero
 from .interfaz_partida import InterfazPartida
+from .temas_graficos import TemaGrafico
 
 
 class PanelAnalisis(InterfazPartida):
@@ -80,6 +81,17 @@ class PanelAnalisis(InterfazPartida):
         self.mostrar_estado(sesion.estado_actual)
         self._crear_herramientas()
         self._crear_editor()
+
+    def aplicar_tema(self, tema: TemaGrafico) -> None:
+        super().aplicar_tema(tema)
+        if self.editor is not None:
+            self._casillero_antes_de_editar.aplicar_tema(tema)
+
+    def actualizar_resaltado_jaque(self) -> None:
+        # El borrador puede no tener reyes ni representar el estado mostrado.
+        # Al cerrar el editor se actualiza el tablero con las opciones vigentes.
+        if self.editor is None:
+            super().actualizar_resaltado_jaque()
 
     def copiar_posicion_original(self):
         if self.promocion_pendiente or self.editor is not None:

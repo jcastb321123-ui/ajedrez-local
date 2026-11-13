@@ -4,23 +4,28 @@ Aplicación de ajedrez en Python y Tkinter, con partidas entre dos personas en e
 mismo equipo y herramientas para explorar posiciones y variantes sin alterar la
 partida original.
 
-**Versión 0.3.0 · Biblioteca de partidas.** Guarda, consulta y recupera partidas
-en SQLite, y utiliza archivos JSON para trasladarlas entre equipos. El juego contra IA, las partidas
-remotas y la base de datos de usuarios todavía no están disponibles.
+**Versión 0.4.0 · Preferencias gráficas persistentes.** Elige entre doce temas
+y tres modos de resaltado del jaque. La aplicación recupera tu elección al abrirse,
+sin modificar tus partidas ni sus archivos. Conserva la biblioteca SQLite y el
+intercambio de partidas JSON. El juego contra IA, las partidas remotas y las
+cuentas de usuario todavía no están disponibles.
 
-[Descargar v0.3.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.3.0)
+[Descargar v0.4.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.4.0)
 · [Pruebas automáticas](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
 
 ![Partida local con navegación, selección de piezas y anotaciones estratégicas](docs/imagenes/partida-local.png)
 
-Captura de v0.3.0: partida local con una flecha de análisis y una pieza
+Captura de v0.4.0: partida local con una flecha de análisis y una pieza
 seleccionada. Las anotaciones no modifican la posición del modelo.
+
+![Preferencias para elegir el tema del tablero y el modo de resaltado del jaque](docs/imagenes/preferencias.png)
 
 ![Biblioteca de partidas con fechas y controles de apertura, guardado y eliminación](docs/imagenes/biblioteca.png)
 
 ## Para conocer el proyecto
 
 - [Instalación y ejecución](#instalación): prepara una partida local.
+- [Preferencias visuales](#preferencias-visuales): personaliza el tablero y el jaque.
 - [Arquitectura](docs/arquitectura.md): responsabilidades, flujo de una jugada y puntos de ampliación.
 - [Contribución](CONTRIBUTING.md): entorno de desarrollo, pruebas y criterios para los cambios.
 - [Limitaciones actuales](#limitaciones-y-próximos-pasos): alcance real de esta versión.
@@ -52,9 +57,9 @@ seleccionada. Las anotaciones no modifican la posición del modelo.
 - Análisis hipotético en el tablero principal o en un panel independiente.
 - Editor de posiciones en el panel de análisis: colocar, quitar y mover piezas,
   elegir el turno y configurar derechos de enroque y captura al paso.
-- Recursos gráficos incluidos en la instalación. Los temas y los tres modos de
-  resaltado del jaque se configuran mediante código; aún no hay un menú general
-  de preferencias.
+- Recursos gráficos incluidos en la instalación: doce temas y tres modos de
+  resaltado del jaque seleccionables desde **Preferencias**, con guardado entre
+  ejecuciones independiente de las partidas.
 
 ## Requisitos
 
@@ -73,14 +78,14 @@ administrador. El funcionamiento en otros sistemas aún no se ha verificado.
 
 ### Desde la entrega publicada
 
-Descarga `ajedrez_local-0.3.0-py3-none-any.whl` desde
-[la entrega v0.3.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.3.0).
+Descarga `ajedrez_local-0.4.0-py3-none-any.whl` desde
+[la entrega v0.4.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.4.0).
 Abre PowerShell en la carpeta donde lo has guardado y ejecuta:
 
 ```powershell
 python --version
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.3.0-py3-none-any.whl
+.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.4.0-py3-none-any.whl
 .\.venv\Scripts\ajedrez.exe
 ```
 
@@ -88,6 +93,13 @@ Necesitas Python 3.13 o posterior con Tkinter. El archivo `.whl` incluye el cód
 y los recursos gráficos; no es un ejecutable autónomo. Esta instalación no descarga
 dependencias. La entrega incluye `SHA256SUMS.txt` para comprobar la descarga con
 `Get-FileHash -Algorithm SHA256`.
+
+### Actualizar una instalación anterior
+
+Cierra la aplicación e instala el nuevo `.whl` con el Python del entorno que ya
+utilizas; no hace falta recrear ese entorno. La biblioteca SQLite y los archivos
+JSON de versiones anteriores siguen siendo compatibles. La primera apertura usa
+el tema predeterminado si todavía no hay preferencias guardadas.
 
 ### Desde el código fuente
 
@@ -178,8 +190,9 @@ y se mueve por turnos.
 - Si falta elegir una pieza de promoción, completa la elección antes de guardar.
 
 Se guarda siempre la **partida original**, aunque estés viendo una posición
-histórica o trabajando en un análisis. Las variantes, anotaciones, preferencias
-visuales y propuestas de tablas pendientes son temporales y no se guardan.
+histórica o trabajando en un análisis. Las variantes, anotaciones y propuestas
+de tablas pendientes son temporales y no se guardan. Las preferencias visuales
+se guardan en un archivo independiente de las partidas.
 Una posición inicial personalizada conserva el turno, los indicadores de primer
 movimiento, el peón capturable al paso y el contador de medios movimientos.
 
@@ -191,6 +204,47 @@ JSON de v0.2.0 siguen siendo compatibles: ábrelos y guárdalos en la biblioteca
 El archivo JSON puede copiarse a otro equipo con una versión compatible de la aplicación.
 Un archivo no válido se rechaza sin reemplazar la partida abierta. Consulta el
 [formato de persistencia](docs/persistencia.md) para conocer su estructura.
+
+### Preferencias visuales
+
+El botón **Preferencias** ofrece los temas del catálogo en una lista: actualmente
+hay doce combinaciones de paleta y acabado. Cambiar el tema conserva el tamaño
+del tablero, la partida y la posición mostrada, incluso al consultar el historial
+o explorar una variante. Se actualizan también las piezas, proyecciones y marcas
+existentes, manteniendo sus identificadores y el registro de anotaciones.
+
+El mismo diálogo permite elegir entre resaltar permanentemente el rey,
+avisar mediante parpadeo al rechazar un movimiento que lo deja en jaque, o
+resaltar permanentemente el rey y las piezas que lo amenazan.
+
+- **Aplicar** guarda la elección, actualiza la vista y cierra el diálogo.
+- **Cancelar**, Escape y el cierre de la ventana descartan la elección.
+- **Restablecer valores predeterminados** selecciona el tema «Club · Liso mate»
+  y el resaltado permanente del rey; todavía hay que pulsar **Aplicar** para confirmarlo.
+
+La elección se aplica al tablero principal y a su panel de análisis, conserva
+la posición mostrada, la selección y las anotaciones, y se mantiene al iniciar
+o abrir otra partida. Durante la edición de posiciones el tema cambia tanto en
+el borrador como en el tablero oculto; el modo de jaque se aplica al regresar
+al análisis, sin marcar el borrador. Si hay una promoción pendiente, sus botones
+también reciben el tema nuevo y la elección de la pieza sigue pendiente.
+Si falla la carga de un tema o la escritura de las preferencias, se conserva la
+configuración anterior y el diálogo permanece abierto para reintentar o cancelar.
+
+En Windows, la configuración se guarda en
+`%LOCALAPPDATA%\ajedrez-local\preferencias.json`, separada de `biblioteca.sqlite3`
+y de los archivos de partida. Conserva el identificador del tema, el modo de
+jaque y los valores de intervalo y repeticiones del parpadeo. Se carga antes de
+construir el tablero al iniciar la aplicación. Cambiar preferencias no marca
+la partida como modificada ni guarda sus cambios pendientes.
+
+El primer inicio utiliza los valores predeterminados sin crear ningún archivo.
+Cancelar el diálogo tampoco escribe. Si el archivo está dañado, es incompatible
+o no se puede leer, la aplicación avisa y usa valores predeterminados sin
+sobrescribirlo. Si sólo falla el tema guardado, utiliza el tema predeterminado
+y conserva las opciones válidas del jaque. Una confirmación posterior con
+**Aplicar** guarda la nueva configuración; **Restablecer** seguido de **Aplicar**
+conserva el tema y modo predeterminados también para los próximos inicios.
 
 ### Controles del tablero
 
@@ -286,6 +340,7 @@ ajedrez/
     interfaz_juego.py      Solicitudes al modelo y promoción.
     autenticacion.py       Claves de los emisores; no cuentas de usuario.
     persistencia.py        Formato de partida e intercambio por archivos JSON.
+    preferencias_graficas.py Configuración gráfica del usuario en JSON independiente.
     repositorio_partidas.py Biblioteca SQLite independiente de las sesiones.
     analisis_partida.py    Navegación y variantes provisionales.
     editor_posicion.py     Edición y validación de posiciones.
@@ -324,7 +379,7 @@ Para comprobar únicamente el arranque:
 .\.venv\Scripts\python.exe -B -m unittest pruebas.test_aplicacion -v
 ```
 
-La versión 0.3.0 se ha comprobado con 485 pruebas del proyecto y cuatro
+La versión 0.4.0 se ha comprobado con 531 pruebas del proyecto y cinco
 comprobaciones del paquete instalado. La batería incluye casos del modelo, sesiones, posiciones iniciales, movimientos
 especiales, abandono, tablas por acuerdo y por reglas de movimientos y repetición,
 análisis, marcas, temas, arranque, biblioteca SQLite y persistencia entre ejecuciones. Algunas pruebas utilizan ventanas
@@ -343,7 +398,7 @@ proyecto. Desde su carpeta exterior y con el entorno de desarrollo ya creado:
 ```powershell
 .\.venv\Scripts\python.exe -m pip wheel . --no-deps --wheel-dir dist
 .\.venv\Scripts\python.exe -m venv .venv-comprobacion
-.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.3.0-py3-none-any.whl
+.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.4.0-py3-none-any.whl
 .\.venv-comprobacion\Scripts\python.exe -I -B -X utf8 .\herramientas\comprobar_instalacion.py
 ```
 
@@ -358,7 +413,9 @@ o por `PYTHONPATH`. El comprobador verifica la copia instalada, sus metadatos y
 su lanzador; crea una ventana oculta con las imágenes reales y reproduce
 `e2–e4` y `e7–e5`, comprobando el modelo y el tablero gráfico. También guarda una
 partida, la recupera y continúa jugando con la copia instalada; comprueba además
-la biblioteca con widgets reales y una base de datos temporal. Termina con error
+la biblioteca con widgets reales y una base de datos temporal. La quinta prueba
+comprueba las preferencias entre dos arranques, con
+archivos temporales para no utilizar ni modificar la configuración personal. Termina con error
 si falta Tkinter, no hay entorno gráfico o falla alguna comprobación.
 
 El flujo [Pruebas y paquete de la versión local](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
@@ -378,7 +435,7 @@ en [CONTRIBUTING.md](CONTRIBUTING.md#publicar-una-versión).
   operativo; no es un servicio remoto ni una base de datos de cuentas.
   Las claves internas de sesión no son cuentas de usuario y se generan de nuevo
   al abrir una partida.
-- No hay menú general de preferencias gráficas ni animación del desplazamiento.
+- No hay animación del desplazamiento.
 - La detección de posiciones muertas cubre el material insuficiente indicado
   y los bloqueos permanentes descritos, desde la posición inicial y después de
   cada jugada confirmada. También se aplican al resultado por abandono.

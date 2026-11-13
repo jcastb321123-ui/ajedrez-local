@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 from ..piezas import Color
+from .opciones_visuales import IDENTIFICADOR_TEMA_PREDETERMINADO
 
 type Imagenes[Clave] = dict[Clave, tk.PhotoImage]
 
@@ -202,10 +203,23 @@ CARPETA_RECURSOS_PREDETERMINADA = (
 )
 
 
+def obtener_temas_disponibles(
+   *, carpeta_recursos: str | Path = CARPETA_RECURSOS_PREDETERMINADA,
+) -> dict[str, str]:
+   """Identificadores y nombres para la interfaz, sin cargar imágenes ni crear Tk."""
+   with (Path(carpeta_recursos) / "catalogo.json").open(encoding="utf-8") as archivo:
+      catalogo = json.load(archivo)
+   return {
+      identificador: f"{datos['paleta'].replace('_', ' ').capitalize()} · "
+                     f"{datos['acabado'].replace('_', ' ').capitalize()}"
+      for identificador, datos in catalogo["temas"].items()
+   }
+
+
 def cargar_tema(
    master: tk.Misc,
    *,
-   identificador: str = "club.liso_mate",
+   identificador: str = IDENTIFICADOR_TEMA_PREDETERMINADO,
    dimension_casilla: int = 60,
    carpeta_recursos: str | Path = CARPETA_RECURSOS_PREDETERMINADA,
    colores: dict[str, str] | None = None,

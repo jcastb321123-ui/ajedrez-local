@@ -9,6 +9,9 @@ from dataclasses import dataclass
 from enum import Enum
 
 
+IDENTIFICADOR_TEMA_PREDETERMINADO = "club.liso_mate"
+
+
 class ModoResaltadoJaque(Enum):
     REY_PERMANENTE = "rey_permanente"
     INTERMITENTE_TRAS_RECHAZO = "intermitente_tras_rechazo"

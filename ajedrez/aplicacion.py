@@ -3,25 +3,35 @@ import sqlite3
 from pathlib import Path
 from tkinter import filedialog, messagebox, simpledialog
 from .sesion import SesionLocal,AsignacionColores, ModalidadAsignacion
-from .gráficos.temas_graficos import cargar_tema, TemaGrafico
+from .gráficos.temas_graficos import cargar_tema, obtener_temas_disponibles, TemaGrafico
 from .gráficos.interfaz_partida import InterfazPartida
 from .gráficos.graficos_tablero import Casillero
 from .gráficos.biblioteca_partidas import VentanaBiblioteca
+from .gráficos.dialogo_preferencias import DialogoPreferencias
+from .gráficos.opciones_visuales import OpcionesVisuales
 from .partida import EstadoPartida, Partida
 from .persistencia import ErrorArchivoPartida, cargar_partida, guardar_partida, partida_a_datos
 from .repositorio_partidas import RepositorioPartidasSQLite, ResumenPartida, obtener_ruta_biblioteca_predeterminada
+from .preferencias_graficas import (
+    ErrorPreferencias, PreferenciasGraficas, cargar_preferencias, guardar_preferencias,
+    obtener_ruta_preferencias_predeterminada,
+)
 
 class AplicacionAjedrez:
     def __init__(self,
                  *,
                  ventana: tk.Tk | None = None,
                  modalidad_asignacion: ModalidadAsignacion | None = None,
-                 repositorio: RepositorioPartidasSQLite | None = None):
+                 repositorio: RepositorioPartidasSQLite | None = None,
+                 ruta_preferencias: str | Path | None = None):
         if not ventana:
             ventana = tk.Tk()
         self._ventana = ventana
         self._ventana.title("Ajedrez")
-        self._tema = cargar_tema(ventana)
+        self._ruta_preferencias = (Path(ruta_preferencias) if ruta_preferencias is not None
+                                  else obtener_ruta_preferencias_predeterminada())
+        self._tema, self._opciones_visuales, aviso_preferencias = self._cargar_preferencias_iniciales()
+        self._dialogo_preferencias: DialogoPreferencias | None = None
         self._panel_controles = tk.Frame(ventana)
         self.panel_controles.pack()
         self._contenedor_partida = None
@@ -54,6 +64,10 @@ class AplicacionAjedrez:
             self.panel_controles, text="Exportar archivo", command=self.solicitar_exportar_partida,
         )
         self._boton_exportar.grid(column=4, row=0)
+        self._boton_preferencias = tk.Button(
+            self.panel_controles, text="Preferencias", command=self.solicitar_preferencias,
+        )
+        self._boton_preferencias.grid(column=5, row=0)
         if not modalidad_asignacion:
             self._modalidad_asignacion = ModalidadAsignacion.ALEATORIA
         else:
@@ -62,7 +76,71 @@ class AplicacionAjedrez:
 
         self.ventana.protocol("WM_DELETE_WINDOW", 
                               self.solicitar_cierre)
+        if aviso_preferencias is not None:
+            messagebox.showwarning(parent=self.ventana, title='Preferencias gráficas',
+                                   message=aviso_preferencias)
+
+    def _cargar_preferencias_iniciales(self) -> tuple[TemaGrafico, OpcionesVisuales, str | None]:
+        aviso = None
+        try:
+            preferencias = cargar_preferencias(self._ruta_preferencias)
+        except (OSError, ErrorPreferencias) as error:
+            preferencias = PreferenciasGraficas()
+            aviso = ('No se pudieron cargar las preferencias. Se usarán los valores predeterminados.\n'
+                     f'El archivo no se ha modificado.\n\n{error}')
+        try:
+            tema = cargar_tema(self.ventana, identificador=preferencias.identificador_tema)
+        except (OSError, ValueError, KeyError, tk.TclError) as error:
+            if preferencias.identificador_tema == PreferenciasGraficas().identificador_tema:
+                raise
+            tema = cargar_tema(self.ventana)
+            aviso = ('No se pudo cargar el tema guardado. Se usará el tema predeterminado, '
+                     'conservando las opciones del jaque.\nEl archivo no se ha modificado.\n\n'
+                     f'{error}')
+        return tema, preferencias.opciones_visuales, aviso
         
+    def solicitar_preferencias(self) -> None:
+        if self._dialogo_preferencias is not None and self._dialogo_preferencias.winfo_exists():
+            self._dialogo_preferencias.lift()
+            return
+        try:
+            temas = obtener_temas_disponibles()
+        except (OSError, ValueError, KeyError) as error:
+            messagebox.showerror(parent=self.ventana, title='No se pudieron abrir las preferencias',
+                                 message=str(error))
+            return
+        self._dialogo_preferencias = DialogoPreferencias(
+            self.ventana, self._opciones_visuales, temas=temas,
+            tema_actual=self.tema.identificador, aplicar=self._aplicar_preferencias,
+        )
+
+    def _aplicar_preferencias(self, opciones: OpcionesVisuales, identificador_tema: str) -> bool:
+        tema = self.tema
+        if identificador_tema != tema.identificador:
+            # Toda la carga se completa antes de cambiar el tablero o el modo de jaque.
+            try:
+                tema = cargar_tema(self.ventana, identificador=identificador_tema,
+                                   dimension_casilla=self.tema.dimension_casillas)
+            except (OSError, ValueError, KeyError, tk.TclError) as error:
+                messagebox.showerror(parent=self._dialogo_preferencias,
+                                     title='No se pudo cargar el tema', message=str(error))
+                return False
+        try:
+            guardar_preferencias(PreferenciasGraficas(
+                identificador_tema=identificador_tema, opciones_visuales=opciones,
+            ), self._ruta_preferencias)
+        except OSError as error:
+            messagebox.showerror(parent=self._dialogo_preferencias,
+                                 title='No se pudieron guardar las preferencias', message=str(error))
+            return False
+        if tema is not self.tema:
+            self.interfaz_partida.aplicar_tema(tema)
+            self._tema = tema
+        if opciones != self._opciones_visuales:
+            self.interfaz_partida.aplicar_opciones_visuales(opciones)
+            self._opciones_visuales = opciones
+        return True
+
     def solicitar_nueva_partida(self) -> None:
         if self._hay_cambios_sin_guardar():
             continuar = self._confirmar_guardado_pendiente()
@@ -308,6 +386,7 @@ class AplicacionAjedrez:
 
         self.interfaz_partida = InterfazPartida(sesion_local,
                                    casillero,
+                                   opciones_visuales = self._opciones_visuales,
                                    contenedor = self.contenedor_partida)
         if partida is not None:
             self.interfaz_partida.mostrar_estado(sesion_local.estado_actual)

@@ -26,7 +26,8 @@ class PruebasPersistenciaAplicacion(unittest.TestCase):
         self.temporal = TemporaryDirectory()
         self.addCleanup(self.temporal.cleanup)
         self.ruta = Path(self.temporal.name) / 'partida.json'
-        self.aplicacion = AplicacionAjedrez(ventana=self.ventana)
+        self.aplicacion = AplicacionAjedrez(ventana=self.ventana,
+                                           ruta_preferencias=Path(self.temporal.name) / 'preferencias.json')
 
     def mover(self, origen, destino):
         vista = self.aplicacion.interfaz_partida

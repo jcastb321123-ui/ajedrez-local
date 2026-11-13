@@ -249,6 +249,55 @@ class Casillero:
    def tema(self) -> TemaGrafico:
       return self._tema
 
+   def aplicar_tema(self, tema: TemaGrafico) -> None:
+      """Cambia los recursos de los dibujos existentes, conservando IDs y coordenadas.
+
+      Los temas del catálogo comparten las claves de piezas y anotaciones.
+      Cambiar el tamaño del tablero no forma parte de esta operación.
+      """
+      if tema.dimension_casillas != self.tamanno_casilla:
+         raise ValueError("El tema debe conservar el tamaño actual de las casillas.")
+      equivalencias = {}
+      for grupo in ("casillas", "piezas", "proyecciones", "marcas", "distintivos", "secuencias"):
+         nuevas = getattr(tema, grupo)
+         for clave, imagen in getattr(self.tema, grupo).items():
+            equivalencias[str(imagen)] = nuevas[clave]
+
+      for id_elemento in self.canvas.find_all():
+         if self.canvas.type(id_elemento) != "image":
+            continue
+         etiquetas = self.canvas.gettags(id_elemento)
+         clave_marca = next((etiqueta.removeprefix("marca:") for etiqueta in etiquetas
+                             if etiqueta.startswith("marca:")), None)
+         if clave_marca is not None:
+            # Dos marcas pueden compartir una imagen y conservar identidades distintas.
+            imagen = tema.marcas[clave_marca]
+         elif "casilla_clara" in etiquetas:
+            imagen = tema.casillas["clara"]
+         elif "casilla_oscura" in etiquetas:
+            imagen = tema.casillas["oscura"]
+         else:
+            imagen = equivalencias[self.canvas.itemcget(id_elemento, "image")]
+         self.canvas.itemconfigure(id_elemento, image=imagen)
+
+      self._tema = tema
+      for id_flecha in self.canvas.find_withtag("flecha"):
+         etiquetas = self.canvas.gettags(id_flecha)
+         clave_color = next((etiqueta.removeprefix("color_tema:") for etiqueta in etiquetas
+                             if etiqueta.startswith("color_tema:")), None)
+         if clave_color is None:
+            continue
+         color = tema.colores[clave_color]
+         for etiqueta in etiquetas:
+            if etiqueta.startswith("color_original:"):
+               self.canvas.dtag(id_flecha, etiqueta)
+         self.canvas.addtag_withtag(f"color_original:{color}", id_flecha)
+         self.canvas.itemconfigure(id_flecha, fill=color, width=tema.geometria["flecha"]["width"],
+                                   arrowshape=tema.geometria["flecha"]["arrowshape"])
+         if "flecha_seleccionada" in etiquetas:
+            self.canvas.dtag(id_flecha, "flecha_seleccionada")
+            self.alternar_resaltado_flecha(id_flecha)
+
    @property
    def contenedor(self) -> tk.Frame:
       return self._contenedor
@@ -484,6 +533,7 @@ class Casillero:
       self.anotaciones_estrategicas.append(id_flecha)
 
       self.canvas.addtag_withtag(f"color_original:{relleno}", id_flecha)
+      self.canvas.addtag_withtag(f"color_tema:{clave}", id_flecha)
 
       self._ordenar_capas()
 

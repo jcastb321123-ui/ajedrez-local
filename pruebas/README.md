@@ -104,3 +104,17 @@ python -m pruebas.gui_prueba4
 Los ejercicios anteriores y las copias de sincronización se conservan en el
 equipo de desarrollo y se excluyen mediante `.gitignore`. No se necesitan para
 ejecutar la aplicación ni esta batería de pruebas.
+
+## Preferencias gráficas
+
+Para comprobar conjuntamente el diálogo, el cambio de tema y la recuperación
+de la configuración al reiniciar:
+
+```powershell
+.\.venv\Scripts\python.exe -B -X utf8 -m unittest pruebas.test_dialogo_preferencias pruebas.test_cambio_tema pruebas.test_preferencias_graficas -v
+```
+
+Estas pruebas utilizan widgets reales y archivos temporales. Incluyen el
+historial, las variantes, el editor, la promoción pendiente y los errores de
+lectura o escritura, sin modificar las preferencias personales del equipo.
+El comprobador del paquete instalado reproduce también Aplicar → cerrar → abrir.

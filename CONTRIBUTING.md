@@ -68,10 +68,15 @@ captura al paso y las reglas de tablas pueden necesitar también sus metadatos
 o el historial.
 
 En una solicitud de cambios, explica qué problema resuelve, qué comportamiento
-cambia y qué pruebas se han ejecutado. Las modalidades remota y contra IA, la
-base de datos de usuarios y el menú de preferencias siguen pendientes de diseño
+cambia y qué pruebas se han ejecutado. Las modalidades remota y contra IA y la
+base de datos de usuarios siguen pendientes de diseño
 e integración. El formato de archivos de partida está documentado en
 [docs/persistencia.md](docs/persistencia.md).
+
+Al probar `AplicacionAjedrez`, proporciona una `ruta_preferencias` temporal;
+para las pruebas de `main`, aísla `LOCALAPPDATA`. Las pruebas no deben consultar
+ni modificar las preferencias personales del equipo. El archivo de configuración
+está descrito en [docs/preferencias.md](docs/preferencias.md).
 
 ## Publicar una versión
 

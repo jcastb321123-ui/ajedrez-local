@@ -2,10 +2,12 @@
 
 from contextlib import chdir
 import importlib
+import os
 import pickle
 from pathlib import Path
 import subprocess
 import sys
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import tkinter as tk
 import unittest
@@ -20,6 +22,13 @@ RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
 
 
 class PruebasPaquete(unittest.TestCase):
+    def setUp(self):
+        self.temporal = TemporaryDirectory()
+        self.addCleanup(self.temporal.cleanup)
+        entorno = patch.dict(os.environ, {'LOCALAPPDATA': self.temporal.name})
+        entorno.start()
+        self.addCleanup(entorno.stop)
+
     def ejecutar_python(self, codigo):
         resultado = subprocess.run(
             [sys.executable, '-B', '-X', 'utf8', '-c', codigo],
@@ -56,7 +65,7 @@ with (patch('tkinter.Tk') as ventana,
     ventana.return_value.mainloop.assert_called_once_with()
     assert frame.call_count == 2
     assert all(llamada.args == (ventana.return_value,) for llamada in frame.call_args_list)
-    tema.assert_called_once_with(ventana.return_value)
+    tema.assert_called_once_with(ventana.return_value, identificador='club.liso_mate')
     casillero.assert_called_once_with(frame.return_value, tema.return_value)
     assert interfaz.call_args.kwargs['contenedor'] is frame.return_value
 ''')
@@ -136,6 +145,9 @@ with (patch('tkinter.Tk') as ventana,
 
 class PruebasNuevaPartida(unittest.TestCase):
     def setUp(self):
+        self.temporal = TemporaryDirectory()
+        self.addCleanup(self.temporal.cleanup)
+        self.ruta_preferencias = Path(self.temporal.name) / 'preferencias.json'
         self.modulo = importlib.import_module('ajedrez.aplicacion')
         self.crear_tk = tk.Tk
         self.errores = []
@@ -149,7 +161,7 @@ class PruebasNuevaPartida(unittest.TestCase):
         return ventana
 
     def crear_aplicacion(self):
-        return self.modulo.AplicacionAjedrez(ventana=self.crear_ventana())
+        return self.modulo.AplicacionAjedrez(ventana=self.crear_ventana(), ruta_preferencias=self.ruta_preferencias)
 
     def mover_e2_e4(self, vista):
         vista.gestionar_clic_izquierdo(SimpleNamespace(x=270, y=390))
@@ -160,7 +172,7 @@ class PruebasNuevaPartida(unittest.TestCase):
         ventana = self.crear_ventana()
         with (patch.object(self.modulo.tk, 'Tk') as construir,
               patch('tkinter.messagebox.askyesno') as preguntar):
-            aplicacion = self.modulo.AplicacionAjedrez(ventana=ventana)
+            aplicacion = self.modulo.AplicacionAjedrez(ventana=ventana, ruta_preferencias=self.ruta_preferencias)
         construir.assert_not_called()
         preguntar.assert_not_called()
         self.assertIs(aplicacion.ventana, ventana)
@@ -172,7 +184,7 @@ class PruebasNuevaPartida(unittest.TestCase):
 
     def test_crea_una_ventana_cuando_se_omite_el_argumento(self):
         with patch.object(self.modulo.tk, 'Tk', side_effect=self.crear_ventana) as construir:
-            aplicacion = self.modulo.AplicacionAjedrez()
+            aplicacion = self.modulo.AplicacionAjedrez(ruta_preferencias=self.ruta_preferencias)
         construir.assert_called_once_with()
         self.assertTrue(aplicacion.ventana.winfo_exists())
         self.assertIs(aplicacion.contenedor_partida.master, aplicacion.ventana)
@@ -221,7 +233,7 @@ class PruebasNuevaPartida(unittest.TestCase):
                 self.assertFalse(actual.casillero.anotaciones_estrategicas)
                 self.assertEqual(actual.indicador_estado_partida.cget('text'), 'Turno de blancas')
                 self.assertEqual(len(actual.casillero.canvas.find_withtag('pieza')), 32)
-            cargar.assert_called_once_with(ventana)
+            cargar.assert_called_once_with(ventana, identificador='club.liso_mate')
 
 
 if __name__ == '__main__':
