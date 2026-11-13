@@ -4,17 +4,19 @@ Aplicación de ajedrez en Python y Tkinter, con partidas entre dos personas en e
 mismo equipo y herramientas para explorar posiciones y variantes sin alterar la
 partida original.
 
-**Versión 0.2.0 · Guardado y recuperación de partidas locales.** Incluye archivos
-JSON con el historial, el turno y el resultado. El juego contra IA, las partidas
+**Versión 0.3.0 · Biblioteca de partidas.** Guarda, consulta y recupera partidas
+en SQLite, y utiliza archivos JSON para trasladarlas entre equipos. El juego contra IA, las partidas
 remotas y la base de datos de usuarios todavía no están disponibles.
 
-[Descargar v0.2.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.2.0)
+[Descargar v0.3.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.3.0)
 · [Pruebas automáticas](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
 
 ![Partida local con navegación, selección de piezas y anotaciones estratégicas](docs/imagenes/partida-local.png)
 
-Captura de v0.2.0: partida local con una flecha de análisis y una pieza
+Captura de v0.3.0: partida local con una flecha de análisis y una pieza
 seleccionada. Las anotaciones no modifican la posición del modelo.
+
+![Biblioteca de partidas con fechas y controles de apertura, guardado y eliminación](docs/imagenes/biblioteca.png)
 
 ## Para conocer el proyecto
 
@@ -26,7 +28,8 @@ seleccionada. Las anotaciones no modifican la posición del modelo.
 ## Funcionalidades disponibles
 
 - Partida local con validación de movimientos y alternancia de turnos.
-- Guardado y recuperación de partidas locales en archivos JSON, con historial,
+- Biblioteca SQLite: guardar, actualizar, listar, abrir y eliminar partidas.
+- Intercambio de partidas mediante archivos JSON, con historial,
   turno, resultado y metadatos para los movimientos especiales y las tablas.
 - Capturas, enroque, captura al paso y selector gráfico de promoción.
 - Abandono y propuestas de tablas por acuerdo, con controles para ambos jugadores.
@@ -70,14 +73,14 @@ administrador. El funcionamiento en otros sistemas aún no se ha verificado.
 
 ### Desde la entrega publicada
 
-Descarga `ajedrez_local-0.2.0-py3-none-any.whl` desde
-[la entrega v0.2.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.2.0).
+Descarga `ajedrez_local-0.3.0-py3-none-any.whl` desde
+[la entrega v0.3.0](https://github.com/jcastb321123-ui/ajedrez-local/releases/tag/v0.3.0).
 Abre PowerShell en la carpeta donde lo has guardado y ejecuta:
 
 ```powershell
 python --version
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.2.0-py3-none-any.whl
+.\.venv\Scripts\python.exe -m pip install --no-index --no-deps .\ajedrez_local-0.3.0-py3-none-any.whl
 .\.venv\Scripts\ajedrez.exe
 ```
 
@@ -148,10 +151,27 @@ y se mueve por turnos.
 
 ### Guardar y recuperar una partida
 
-- **Guardar partida** pide un archivo `.json` la primera vez. Las siguientes
-  pulsaciones actualizan ese archivo; su nombre aparece en el título de la ventana.
-- **Abrir partida** recupera la posición vigente y todo el historial registrado.
+- **Biblioteca** muestra las partidas guardadas, empezando por las actualizadas
+  más recientemente. Las fechas se muestran con la hora local del equipo.
+- **Guardar partida actual**, dentro de la biblioteca, pide un título la primera
+  vez y crea una entrada. Después actualiza esa entrada, conservando su identidad
+  y su fecha de creación. **Guardar copia** crea otra entrada independiente.
+- Selecciona una fila y pulsa **Abrir** para recuperar su posición e historial.
+  **Eliminar** pide confirmación. Si eliminas la partida abierta, sigue en pantalla
+  y pasa a estar sin guardar; puedes conservarla de nuevo.
+- **Guardar partida** actualiza el registro de biblioteca asociado a la partida
+  abierta. Si no tiene ninguno, utiliza el guardado por archivo descrito abajo.
+- Seleccionar otra fila en la biblioteca no cambia el destino de «Guardar partida
+  actual»: esa selección sólo se usa para abrir o eliminar.
+
+### Archivos JSON y cambios pendientes
+
+- **Guardar partida**, cuando no hay un registro de biblioteca asociado, pide
+  un archivo `.json` la primera vez. Las siguientes pulsaciones actualizan ese archivo.
+- **Abrir archivo** recupera la posición vigente y todo el historial registrado.
   Puedes seguir jugando si está en curso, o navegar y analizar si ha terminado.
+- **Exportar archivo** crea una copia JSON para compartirla. Conserva el destino
+  del guardado habitual y no marca como guardados los cambios pendientes allí.
 - Antes de abrir otra partida, iniciar una nueva o cerrar con cambios en la
   partida original, puedes guardar, descartar esos cambios o cancelar la acción.
   Cancelar el diálogo de archivo o fallar la escritura conserva la partida abierta.
@@ -163,7 +183,12 @@ visuales y propuestas de tablas pendientes son temporales y no se guardan.
 Una posición inicial personalizada conserva el turno, los indicadores de primer
 movimiento, el peón capturable al paso y el contador de medios movimientos.
 
-El archivo puede copiarse a otro equipo con una versión compatible de la aplicación.
+En Windows, la biblioteca se crea al utilizarla por primera vez en
+`%LOCALAPPDATA%\ajedrez-local\biblioteca.sqlite3`, fuera del código y del paquete.
+Para respaldarla completa, cierra la aplicación y copia ese archivo. Los archivos
+JSON de v0.2.0 siguen siendo compatibles: ábrelos y guárdalos en la biblioteca.
+
+El archivo JSON puede copiarse a otro equipo con una versión compatible de la aplicación.
 Un archivo no válido se rechaza sin reemplazar la partida abierta. Consulta el
 [formato de persistencia](docs/persistencia.md) para conocer su estructura.
 
@@ -260,6 +285,8 @@ ajedrez/
     sesion.py              Contrato de sesión y sesiones local y de análisis.
     interfaz_juego.py      Solicitudes al modelo y promoción.
     autenticacion.py       Claves de los emisores; no cuentas de usuario.
+    persistencia.py        Formato de partida e intercambio por archivos JSON.
+    repositorio_partidas.py Biblioteca SQLite independiente de las sesiones.
     analisis_partida.py    Navegación y variantes provisionales.
     editor_posicion.py     Edición y validación de posiciones.
     gráficos/             Tablero visual, interacción, temas y panel de análisis.
@@ -297,9 +324,10 @@ Para comprobar únicamente el arranque:
 .\.venv\Scripts\python.exe -B -m unittest pruebas.test_aplicacion -v
 ```
 
-La batería incluye casos del modelo, sesiones, posiciones iniciales, movimientos
+La versión 0.3.0 se ha comprobado con 485 pruebas del proyecto y cuatro
+comprobaciones del paquete instalado. La batería incluye casos del modelo, sesiones, posiciones iniciales, movimientos
 especiales, abandono, tablas por acuerdo y por reglas de movimientos y repetición,
-análisis, marcas, temas, arranque y persistencia entre ejecuciones. Algunas pruebas utilizan ventanas
+análisis, marcas, temas, arranque, biblioteca SQLite y persistencia entre ejecuciones. Algunas pruebas utilizan ventanas
 ocultas de Tkinter y pueden omitirse si no hay entorno gráfico; esa omisión no
 verifica la interfaz. Las pruebas del catálogo fallan si faltan los recursos.
 
@@ -315,7 +343,7 @@ proyecto. Desde su carpeta exterior y con el entorno de desarrollo ya creado:
 ```powershell
 .\.venv\Scripts\python.exe -m pip wheel . --no-deps --wheel-dir dist
 .\.venv\Scripts\python.exe -m venv .venv-comprobacion
-.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.2.0-py3-none-any.whl
+.\.venv-comprobacion\Scripts\python.exe -m pip install --no-index --no-deps .\dist\ajedrez_local-0.3.0-py3-none-any.whl
 .\.venv-comprobacion\Scripts\python.exe -I -B -X utf8 .\herramientas\comprobar_instalacion.py
 ```
 
@@ -329,7 +357,8 @@ La opción `-I` evita que Python importe las fuentes del proyecto por su ubicaci
 o por `PYTHONPATH`. El comprobador verifica la copia instalada, sus metadatos y
 su lanzador; crea una ventana oculta con las imágenes reales y reproduce
 `e2–e4` y `e7–e5`, comprobando el modelo y el tablero gráfico. También guarda una
-partida, la recupera y continúa jugando con la copia instalada. Termina con error
+partida, la recupera y continúa jugando con la copia instalada; comprueba además
+la biblioteca con widgets reales y una base de datos temporal. Termina con error
 si falta Tkinter, no hay entorno gráfico o falla alguna comprobación.
 
 El flujo [Pruebas y paquete de la versión local](https://github.com/jcastb321123-ui/ajedrez-local/actions/workflows/pruebas.yml)
@@ -345,8 +374,8 @@ en [CONTRIBUTING.md](CONTRIBUTING.md#publicar-una-versión).
 ## Limitaciones y próximos pasos
 
 - No hay oponente de IA ni comunicación entre jugadores por red.
-- No hay registro de usuarios ni base de datos con una biblioteca de partidas.
-  El guardado disponible utiliza archivos locales elegidos por el usuario.
+- No hay registro de usuarios. La biblioteca pertenece al usuario del sistema
+  operativo; no es un servicio remoto ni una base de datos de cuentas.
   Las claves internas de sesión no son cuentas de usuario y se generan de nuevo
   al abrir una partida.
 - No hay menú general de preferencias gráficas ni animación del desplazamiento.

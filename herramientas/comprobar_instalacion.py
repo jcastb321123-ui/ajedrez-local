@@ -11,15 +11,49 @@ import sys
 import sysconfig
 import tkinter as tk
 import unittest
+from unittest.mock import patch
 
 import ajedrez
 from ajedrez.aplicacion import AplicacionAjedrez, main
 from ajedrez.piezas import Color, PeonBlanco, PeonNegro
 from ajedrez.partida import Partida
 from ajedrez.persistencia import cargar_partida, guardar_partida
+from ajedrez.repositorio_partidas import RepositorioPartidasSQLite
 
 
 class ComprobacionInstalacion(unittest.TestCase):
+    def test_biblioteca_sqlite_con_la_interfaz_instalada(self):
+        with TemporaryDirectory() as carpeta:
+            repositorio = RepositorioPartidasSQLite(Path(carpeta) / 'biblioteca.sqlite3')
+            ventana = tk.Tk()
+            ventana.withdraw()
+            errores = []
+            ventana.report_callback_exception = lambda tipo, error, traza: errores.append(error)
+            try:
+                aplicacion = AplicacionAjedrez(ventana=ventana, repositorio=repositorio)
+                partida = aplicacion.interfaz_partida.sesion.partida
+                self.assertIsNone(partida.procesar_solicitud((1, 4), (3, 4)))
+                with patch('ajedrez.aplicacion.simpledialog.askstring', return_value='Instalación comprobada'):
+                    self.assertTrue(aplicacion.solicitar_guardar_en_biblioteca())
+                identificador = aplicacion._id_partida_biblioteca
+                self.assertIsNone(partida.procesar_solicitud((6, 4), (4, 4)))
+                self.assertTrue(aplicacion.solicitar_guardar_partida())
+                aplicacion._boton_biblioteca.invoke()
+                biblioteca = aplicacion._biblioteca
+                biblioteca._boton_abrir.invoke()
+                self.assertEqual(aplicacion.interfaz_partida.sesion.partida.contador_jugadas, 2)
+                self.assertEqual(len(repositorio.listar_partidas()), 1)
+                self.assertEqual(repositorio.cargar_partida(identificador).contador_jugadas, 2)
+                aplicacion._boton_biblioteca.invoke()
+                with patch('ajedrez.aplicacion.messagebox.askyesno', return_value=True):
+                    aplicacion._biblioteca._boton_eliminar.invoke()
+                self.assertEqual(repositorio.listar_partidas(), ())
+                self.assertEqual(aplicacion.interfaz_partida.sesion.partida.contador_jugadas, 2)
+                self.assertTrue(aplicacion._hay_cambios_sin_guardar())
+                self.assertFalse(errores, repr(errores))
+            finally:
+                ventana.destroy()
+
     def test_guardado_y_recuperacion_del_paquete_instalado(self):
         partida = Partida()
         self.assertIsNone(partida.procesar_solicitud((1, 4), (3, 4)))

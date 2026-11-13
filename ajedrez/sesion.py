@@ -71,7 +71,12 @@ class Sesion(ABC):
 
     @property
     def admite_guardado_local(self) -> bool:
-        """Cada modalidad decide si permite exportar su partida localmente."""
+        """Permite guardar el modelo en este equipo, según la política de la sesión.
+
+        «Local» se refiere al almacenamiento: una sesión remota o contra IA
+        también puede habilitarlo. No implica poder reanudar esa sesión desde
+        el modelo guardado; sus datos de conexión o configuración son aparte.
+        """
         return False
 
     @property

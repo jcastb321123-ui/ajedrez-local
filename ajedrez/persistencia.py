@@ -1,8 +1,10 @@
-"""Formato JSON versionado de una partida local, independiente de Tkinter.
+"""Formato JSON del modelo Partida, independiente de Tkinter y de la modalidad.
 
 Se guarda una raíz y los movimientos confirmados. La reconstrucción pasa por
 el modelo, que vuelve a enlazar estados y jugadas y a calcular los contadores.
 Las claves de autenticación, los dibujos y las variantes no pertenecen al archivo.
+La marca «ajedrez-local» identifica este formato de la aplicación, no el tipo
+de sesión. Recuperar el modelo no restablece una conexión remota ni un motor de IA.
 """
 
 import json

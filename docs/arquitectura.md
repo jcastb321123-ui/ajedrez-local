@@ -13,7 +13,8 @@ las demostraciones de consola y las pruebas aprovechan esa separación.
 | Sesión | `Sesion`, `SesionLocal`, `SesionAnalisis` | Exponen la partida y las acciones disponibles; determinan los colores controlados y seleccionables. |
 | Juego local | `EmisorJugador`, `InterfazJuego`, `AutenticadorJugadores` | Identifican al emisor, comprueban el turno y administran las solicitudes de la partida local. |
 | Modelo | `Partida`, `Jugada`, `EstadoPosicion`, `Tablero`, piezas | Validan y aplican movimientos, conservan estados e historial y determinan el resultado. |
-| Persistencia | Funciones de `persistencia.py` | Convierten partidas a datos versionados, las reconstruyen mediante el modelo y leen o escriben archivos JSON. |
+| Persistencia | `persistencia.py`, `RepositorioPartidasSQLite`, `ResumenPartida` | Convierten partidas a datos versionados, reconstruyen el modelo y almacenan archivos JSON o registros de biblioteca. |
+| Biblioteca gráfica | `VentanaBiblioteca` | Lista metadatos y delega en la aplicación la apertura, el guardado y la eliminación. |
 | Dibujo y preferencias | `Casillero`, `CasillaVisual`, `TemaGrafico`, `OpcionesVisuales` | Mantienen los elementos del Canvas, recursos, capas y preferencias visuales. |
 
 `InterfazJuego` no es una ventana: forma parte del flujo de solicitudes de una
@@ -101,8 +102,8 @@ historial de la partida que se está jugando.
   y las preferencias de comportamiento de `OpcionesVisuales`. El menú para
   modificarlos todavía no está implementado.
 - **Persistencia:** `partida_a_datos` y `partida_desde_datos` separan el formato
-  del acceso a archivos. Un futuro almacenamiento en base de datos puede reutilizar
-  esa conversión. `SesionLocal` e `InterfazJuego` admiten una `Partida` ya reconstruida
+  del acceso a archivos. `RepositorioPartidasSQLite` reutiliza esa conversión y
+  ofrece guardar, actualizar, listar, cargar y eliminar. `SesionLocal` e `InterfazJuego` admiten una `Partida` ya reconstruida
   mediante el parámetro nominal opcional `partida`; no se reemplazan atributos internos.
   La capacidad `admite_guardado_local` decide si la aplicación puede guardar esa sesión.
   Consulta el [formato y su alcance](persistencia.md).
@@ -112,6 +113,20 @@ historial de la partida que se está jugando.
 
 La separación permite reutilizar componentes. No constituye una garantía de que
 cualquier extensión futura pueda añadirse sin adaptar ningún contrato existente.
+
+La aplicación conserva un único destino para su guardado habitual: una ruta JSON
+o un identificador de biblioteca. Sólo cambia esa referencia después de completar
+el guardado o la apertura. La copia de datos del último guardado permite comprobar
+si hay cambios pendientes. Exportar un archivo independiente conserva el destino
+y los cambios pendientes; eliminar el registro abierto conserva el modelo en
+pantalla y lo marca como no guardado. No se guardan sesiones ni credenciales en
+SQLite. La modalidad de una partida recuperada la decide el nivel superior; la
+aplicación de esta versión sigue construyendo una sesión local.
+
+La biblioteca se crea al solicitarla, en la carpeta de datos del usuario, y cada
+operación cierra su conexión. `AplicacionAjedrez(repositorio=...)` permite proporcionar
+un repositorio con otra ruta, por ejemplo para pruebas. `VentanaBiblioteca` recibe
+funciones para las acciones y una consulta de capacidad; no conoce `SesionLocal`.
 
 ## Dónde comprobar estas decisiones
 
